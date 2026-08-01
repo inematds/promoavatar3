@@ -27,6 +27,20 @@ alvo) sai distinto por versão de graça.
 Sufixos curtos (`alc`/`aut`/`pro`) porque título longo truncou no HeyGen em
 produção e quebrou o match do download.
 
+## O campo `fecho` (não apague)
+
+`{cta}` é resolvido **por fluxo**, não por alvo: `comandos-fluxo.ts:107` troca
+`{cta}` na definição inteira no momento da criação, a partir de
+`<repo>/cta/cta-9x16.mp4`. Sem contramedida, o CTA comercial entraria também nos
+12 alvos `-alc`, que por definição não têm CTA comercial — e a fase 3 roda sem
+revisão humana, então ninguém pegaria.
+
+Por isso cada alvo carrega um `fecho`, que é resolvido POR ALVO
+(`entrada-fase.ts:130`, a partir dos campos do alvo) e manda no `{cta}`: o
+`-alc` proíbe, o `-aut` permite de leve, o `-pro` usa inteiro.
+
+Se você acrescentar um alvo, ele precisa de `canal`, `gatilho` **e** `fecho`.
+
 ## Onde vive o quê
 
 - `flow.json` — os 36 alvos (12 públicos × 3 tipos) e as 3 fases;
