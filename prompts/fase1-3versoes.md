@@ -68,6 +68,34 @@ SOBREPOSIÇÕES.
 Se você não consegue escrever os três, o problema é o assunto — declare o
 `ERRO:` e pare. Não escreva 36 roteiros em cima de uma tese vaga.
 
+## QUANDO O ASSUNTO FOR UM DEBATE
+
+Se o assunto vier como pergunta em aberto ("isso é bom ou ruim?", "o que você
+acha?", "vale a pena?"), ele **NÃO** é uma instrução para ficar em cima do muro.
+A tese central tem que TOMAR UM LADO.
+
+"Depende do caso", "os dois lados têm razão" e "o importante é se preparar" não
+são teses — são a ausência de uma. Sem lado, os três tipos saem iguais: o mesmo
+resumo equilibrado com três embalagens.
+
+Escolha o lado que a evidência do assunto sustenta melhor. Se o assunto já traz
+uma posição de quem pediu, ela vence a sua — use a dele.
+
+Com uma posição na mesa, os três tipos finalmente se separam de verdade:
+
+- `-alc` pode ser **opinião contrária** — o formato que mais engaja em tema
+  polêmico, e o que sem posição é impossível escrever;
+- `-aut` explica a MECÂNICA que sustenta a posição (por que é assim, o que
+  decorre disso);
+- `-pro` transforma a posição em consequência prática para este público.
+
+**Escreva no `resumo-estrategico.md` qual posição você cravou, em uma frase, e o
+que te fez escolher.** Quem revisa precisa poder discordar da POSIÇÃO, não só do
+texto — e discordar ANTES de 3 avatares serem gerados na mão.
+
+Isso NÃO afrouxa as regras 9 e 10: dá para defender uma posição sem inventar
+data, número, preço, vaga ou urgência. Opinião é permitida; fato inventado, não.
+
 ## REGRAS DE ESCRITA (valem para os três tipos, acima da fórmula da skill)
 
 O texto tem que VENDER O QUE MUDA NA VIDA DA PESSOA — não explicar como o
