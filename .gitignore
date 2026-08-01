@@ -1,0 +1,5 @@
+# Artefatos e mídia: grandes e regeneráveis. O rastro fica no estado do bot
+# (tabelas de fluxo) e nos textos versionados.
+output/
+*.mp4
+*.log
