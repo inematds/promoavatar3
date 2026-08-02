@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>promoavatar2 — três vídeos por público: alcance, autoridade, promocional</title>
-<meta name="description" content="Repo de domínio do fluxo /promoavatar2 do inemaccbot: cada público rende três roteiros com funções diferentes (-alc, -aut, -pro), 36 alvos no total, com portão humano antes de qualquer render.">
+<title>promoavatar3 — três vídeos por público: alcance, autoridade, promocional</title>
+<meta name="description" content="Repo de domínio do fluxo /promoavatar3 do inemaccbot: cada público rende três roteiros com funções diferentes (-alc, -aut, -pro), 36 alvos no total, com portão humano antes de qualquer render.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -94,7 +94,7 @@
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="#top"><span class="emoji">🎯</span> promoavatar2</a>
+  <a class="brand" href="#top"><span class="emoji">🎯</span> promoavatar3</a>
   <span class="sep">|</span>
   <span class="clubpro">
     <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
@@ -108,7 +108,7 @@
     <a class="sec" href="#pre">Pré-requisitos</a>
     <a class="sec" href="#guia">Guia de uso</a>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/promoavatar2" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/inematds/promoavatar3" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -121,17 +121,17 @@
       <p class="lead">Alcance, autoridade e promocional não são três ganchos do mesmo roteiro. O que separa os três é o fecho, e um vídeo que tenta ser os três ao mesmo tempo é o de menor alcance.</p>
       <div class="cta">
         <a class="btn" href="#guia">Começar o guia</a>
-        <a class="btn ghost" href="https://github.com/inematds/promoavatar2" target="_blank" rel="noopener">Ver no GitHub</a>
+        <a class="btn ghost" href="https://github.com/inematds/promoavatar3" target="_blank" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
-    <figure><img src="assets/hero.png" alt="promoavatar2 — três vídeos por público"></figure>
+    <figure><img src="assets/hero.png" alt="promoavatar3 — três vídeos por público"></figure>
   </div>
 </header>
 
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>O promoavatar, com três saídas por público</h2>
-  <p class="sub">Repo de <strong>domínio</strong> do fluxo <code>/promoavatar2</code> do <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. O mecanismo é o mesmo do <a href="https://inematds.github.io/promoavatar/guia/">promoavatar</a> — o bot escreve e PARA, você gera os avatares, <code>/aprovar</code> libera o resto. A diferença é o que sai da fase de texto.</p>
+  <p class="sub">Repo de <strong>domínio</strong> do fluxo <code>/promoavatar3</code> do <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. O mecanismo é o mesmo do <a href="https://inematds.github.io/promoavatar/guia/">promoavatar</a> — o bot escreve e PARA, você gera os avatares, <code>/aprovar</code> libera o resto. A diferença é o que sai da fase de texto.</p>
   <div class="grid g3">
     <div class="card"><h3>3️⃣ Três roteiros por público</h3><p>Os 12 públicos × 3 tipos = <strong>36 alvos</strong>, escritos <code>&lt;publico&gt;-&lt;tipo&gt;</code>: <code>jovens-alc</code>, <code>mulheres-pro</code>, <code>40mais-aut</code>…</p></div>
     <div class="card"><h3>🔤 Referência C#</h3><p>Este fluxo é <code>C#</code>; o <code>promoavatar</code> é <code>A#</code> e o <code>promoclub</code> é <code>P#</code>. O bot recusa referência com prefixo trocado.</p></div>
@@ -176,7 +176,7 @@
   <div class="grid g3">
     <div class="card"><h3>inemaccbot rodando</h3><p>Com este repo declarado em <code>config/fluxos.json</code>.</p><pre><span class="c"># no chat autorizado</span>
 <span class="k">/fluxos</span>
-<span class="k">/promoavatar2 help</span></pre></div>
+<span class="k">/promoavatar3 help</span></pre></div>
     <div class="card"><h3>Conta HeyGen</h3><p>Três avatares por público, gravados na mão — é o custo real deste fluxo.</p><pre><span class="c"># o nome tem que ser exato</span>
 C&lt;N&gt;-&lt;alvo&gt;-v&lt;versao&gt;
 <span class="c"># ex.:</span> <span class="s">C7-jovens-pro-v1</span></pre></div>
@@ -192,15 +192,15 @@ C&lt;N&gt;-&lt;alvo&gt;-v&lt;versao&gt;
   <div class="step"><div class="b">1</div><div>
     <h3>Filtre os alvos — e confira em sombra</h3>
     <p>Os 36 estão declarados, mas rodar os 36 de uma vez são <strong>36 avatares gerados na mão</strong>. O normal é filtrar por público. <code>| sombra</code> imprime fase × alvo × fila × tarefa e não enfileira nada.</p>
-<pre><span class="k">/promoavatar2 &lt;assunto&gt; | alvos=jovens-alc | sombra</span></pre>
+<pre><span class="k">/promoavatar3 &lt;assunto&gt; | alvos=jovens-alc | sombra</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Crie o fluxo com os três tipos de um público</h3>
     <p>O jeito recomendado de começar: um público, os três tipos — assim dá para publicar na ordem alcance → autoridade → promocional e comparar.</p>
-<pre><span class="k">/promoavatar2 &lt;assunto&gt; | alvos=jovens-alc,jovens-aut,jovens-pro</span>
-<span class="k">/promoavatar2 &lt;assunto&gt; | legenda</span>     <span class="c"># padrão é SEM legenda</span>
-<span class="k">/promoavatar2 &lt;assunto&gt; | versao=2</span>     <span class="c"># muda o -vN do título</span></pre>
+<pre><span class="k">/promoavatar3 &lt;assunto&gt; | alvos=jovens-alc,jovens-aut,jovens-pro</span>
+<span class="k">/promoavatar3 &lt;assunto&gt; | legenda</span>     <span class="c"># padrão é SEM legenda</span>
+<span class="k">/promoavatar3 &lt;assunto&gt; | versao=2</span>     <span class="c"># muda o -vN do título</span></pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
@@ -245,15 +245,15 @@ C&lt;N&gt;-&lt;alvo&gt;-v&lt;versao&gt;
 <footer>
   <div class="wrap">
     <div class="pill">flow.json</div><div class="pill">prompts</div><div class="pill">36 alvos</div><div class="pill">HeyGen</div><div class="pill">inemaccbot</div>
-    <p style="margin-top:18px">promoavatar2 · repo de domínio do fluxo <code>C#</code> ·
-      <a href="https://github.com/inematds/promoavatar2">inematds/promoavatar2</a> ·
+    <p style="margin-top:18px">promoavatar3 · repo de domínio do fluxo <code>C#</code> ·
+      <a href="https://github.com/inematds/promoavatar3">inematds/promoavatar3</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
   </div>
 </footer>
 
 <script>
   (function(){
-    var KEY='promoavatar2-theme';
+    var KEY='promoavatar3-theme';
     var b=document.body, t=document.getElementById('themeToggle');
     if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
     t.addEventListener('click',function(){

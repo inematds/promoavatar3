@@ -1,4 +1,4 @@
-# promoavatar2
+# promoavatar3
 
 Três vídeos por público, em vez de um. O resto é o `promoavatar`: o bot escreve
 os textos e PARA, você gera os avatares no HeyGen, `/aprovar C#N` libera o
@@ -6,12 +6,12 @@ download e o reel.
 
 ## 📖 Guia de uso
 
-Guia completo (landing + passo a passo): **https://inematds.github.io/promoavatar2/guia/**
+Guia completo (landing + passo a passo): **https://inematds.github.io/promoavatar3/guia/**
 
 Referência: `C#7`. O `promoavatar` é `A#`, o `promoclub` é `P#` — o bot recusa
 referência com prefixo trocado.
 
-Uso, opções e a tabela dos três tipos: `HELP.md` (ou `/promoavatar2 help` no
+Uso, opções e a tabela dos três tipos: `HELP.md` (ou `/promoavatar3 help` no
 chat). As decisões de engenharia e o porquê de cada uma: `CLAUDE.md`.
 
 ## Os três tipos, e por que não são três variações

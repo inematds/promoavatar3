@@ -1,4 +1,4 @@
-# promoavatar2
+# promoavatar3
 
 Irmão do `promoavatar`, com o mesmo portão humano (o bot escreve os textos e
 PARA; você gera os avatares no HeyGen; `/aprovar C#N` libera download e reel).

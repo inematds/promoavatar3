@@ -1,11 +1,11 @@
-# promoavatar2 — três vídeos por público
+# promoavatar3 — três vídeos por público
 
 Igual ao `promoavatar` (portão humano: o bot escreve, você gera os avatares no
 HeyGen, `/aprovar C#N` libera o resto), com uma diferença: cada público rende
 **três roteiros** em vez de um.
 
 ```
-/promoavatar2 <assunto> [| alvos=jovens-alc,jovens-pro] [| legenda] [| versao=N] [| de=<fase>] [| sombra]
+/promoavatar3 <assunto> [| alvos=jovens-alc,jovens-pro] [| legenda] [| versao=N] [| de=<fase>] [| sombra]
 ```
 
 Referência: `C#7` (o `promoavatar` usa `A#`, o `promoclub` usa `P#`). O bot
@@ -31,7 +31,7 @@ público — os três tipos de um público dividem os dois, e caem no mesmo `liv
 mão.** O normal é filtrar:
 
 ```
-/promoavatar2 <assunto> | alvos=jovens-alc,jovens-aut,jovens-pro
+/promoavatar3 <assunto> | alvos=jovens-alc,jovens-aut,jovens-pro
 ```
 
 ## Fases
@@ -56,7 +56,7 @@ porque título longo já truncou no HeyGen em produção e derrubou o match.
 ## Confira antes de gastar
 
 ```
-/promoavatar2 <assunto> | alvos=jovens-alc | sombra
+/promoavatar3 <assunto> | alvos=jovens-alc | sombra
 ```
 
 Imprime fase × alvo × fila × tarefa e **não enfileira nada**.
