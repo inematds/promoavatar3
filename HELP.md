@@ -40,7 +40,8 @@ mão.** O normal é filtrar:
    `textos/C<N>/<alvo>.md`, mais um `resumo-estrategico.md`. O bot manda a
    `### FALA` de cada um no chat e PARA.
 2. **baixar** (por alvo) — depois do `/aprovar C#N`, procura no HeyGen o vídeo
-   cujo nome é exatamente `C<N>-<alvo>-v1` e baixa o MP4 **sem legenda**.
+   cujo nome é exatamente `C<N>-<alvo>-v1` e baixa o MP4 — a versão COM
+   legenda queimada quando o estúdio gravou com ela, a limpa quando não.
 3. **reel** (por alvo) — monta o reel 9:16 no canal do público.
 
 ## O nome no estúdio

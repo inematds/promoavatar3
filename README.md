@@ -71,6 +71,18 @@ não ficar vazia) e a pergunta que você quer nos comentários.
 Como o resumo diz a posição escolhida, você discorda dela **no portão**, antes de
 gerar avatar nenhum. Aqui isso vale três renders manuais por público, não um.
 
+## Legenda: quem decide é o estúdio
+
+A fase `baixar` prefere o `video_url_caption` (o MP4 com a legenda **queimada**)
+quando a HeyGen o devolve preenchido, e cai no `video_url` limpo quando não vem
+(`escolherUrl`, `inemaccbot/src/fila/tarefas/heygen.ts`). Gravou com legenda no
+estúdio, o reel sai com ela; gravou sem, sai sem — o bot não escolhe.
+
+Duas consequências que nenhum código desfaz: legenda queimada vem enquadrada
+para 16:9 e no reel 9:16 pode ser cortada ou colidir com a base; e se o reel
+também for montado com `| legenda`, saem **duas**. Ligar uma é decidir desligar
+a outra. Aqui isso vale por três vídeos por público, não um.
+
 ## Atenção: tudo aqui é congelado na criação
 
 `flow.json` e o prompt são copiados para dentro do fluxo no momento em que ele
