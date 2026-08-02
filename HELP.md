@@ -60,3 +60,17 @@ porque título longo já truncou no HeyGen em produção e derrubou o match.
 ```
 
 Imprime fase × alvo × fila × tarefa e **não enfileira nada**.
+
+OS AVATARES: SUA MÃO OU A API
+
+Por padrão você grava no HeyGen (é o de sempre). Com `| api`, o BOT gera —
+e isso gasta da carteira pré-paga da HeyGen (~US$ 1 por minuto de vídeo).
+
+  /promoavatar3 <assunto> | api
+  /promoavatar3 <assunto> | api | sem-portao   gera E não para para aprovar
+
+`| api` NÃO tira o portão: você ainda revisa os textos e dá /aprovar antes de
+gastar. Para a esteira inteira sem parar, peça as duas flags.
+
+Confira antes com `| sombra`: a fase `gerar` só aparece no plano quando a
+opção `| api` está ligada.
