@@ -209,6 +209,19 @@
       "opcional": "api"
     },
     {
+      "id": "gerar-creditos",
+      "escopo": "alvo",
+      "fila": "io",
+      "kind": "function",
+      "tarefa": "heygen.gerar-creditos",
+      "opcional": "creditos",
+      "max_tentativas": 2,
+      "espera": {
+        "intervalo": 60,
+        "timeout": 3600
+      }
+    },
+    {
       "id": "baixar",
       "escopo": "alvo",
       "fila": "io",
@@ -231,5 +244,6 @@
     }
   ],
   "avatar_id": "fda4a6217ea3496a97c96339b8abb902",
-  "voice_id": "29583ec22d284e52b1e07f3ba9ef9d1f"
+  "voice_id": "29583ec22d284e52b1e07f3ba9ef9d1f",
+  "engine": "avatar_iii"
 }
