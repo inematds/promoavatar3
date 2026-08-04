@@ -231,7 +231,8 @@
       "espera": {
         "intervalo": 120,
         "timeout": 5400
-      }
+      },
+      "pausa_apos": true
     },
     {
       "id": "reel",
