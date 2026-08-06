@@ -222,6 +222,19 @@
       }
     },
     {
+      "id": "estudio",
+      "escopo": "alvo",
+      "fila": "navegador",
+      "kind": "function",
+      "tarefa": "heygen.estudio",
+      "opcional": "estudio",
+      "max_tentativas": 2,
+      "espera": {
+        "intervalo": 60,
+        "timeout": 3600
+      }
+    },
+    {
       "id": "baixar",
       "escopo": "alvo",
       "fila": "io",
@@ -229,8 +242,8 @@
       "tarefa": "heygen.baixar",
       "max_tentativas": 3,
       "espera": {
-        "intervalo": 120,
-        "timeout": 5400
+        "intervalo": 300,
+        "timeout": 144000
       },
       "pausa_apos": true
     },
