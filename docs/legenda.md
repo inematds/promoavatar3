@@ -109,6 +109,23 @@ Hoje `| legenda` é parseado e **rejeitado** neste fluxo
 4. a opção desce até a tarefa `reel.montar` e vira `--sem-legenda` no
    `montar-reel.py`.
 
+## Ordem de aplicação (importa)
+
+A peça da flag **não mora neste repo** — mora no `inemaccbot`, e mexer nela
+**exige reiniciar o bot**. Reiniciar com job na fila derruba trabalho em curso.
+Por isso:
+
+1. **Primeiro, tudo que é deste repo:** `scripts/legendas.py`, a camada de
+   legenda no `montar.py`, o nó `legenda` no template, o `--sem-legenda` no
+   `montar-reel.py`. **Nada disso exige restart** — os scripts são lidos a cada
+   job, então dá para implementar e testar por linha de comando com o bot no ar
+   e a fila cheia.
+2. **Só depois, e só com a fila vazia:** a flag no `inemaccbot`
+   (`comandos-fluxo.ts:282`, `:182-186`, `:336`) e o restart.
+
+Feito nessa ordem, o motor já está pronto e verificado quando o default liga; o
+restart vira o último passo, não um risco no meio do caminho.
+
 ## Casos-limite
 
 | situação | comportamento |
