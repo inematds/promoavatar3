@@ -1,8 +1,13 @@
 # promoavatar3
 
-Três vídeos por público, em vez de um. O resto é o `promoavatar`: o bot escreve
-os textos e PARA, você gera os avatares no HeyGen, `/aprovar C#N` libera o
-download e o reel.
+Três vídeos por público, em vez de um. O bot escreve os textos e PARA;
+`/aprovar C#N` libera avatar, download e reel.
+
+**Este projeto é AUTÔNOMO** (desde 2026-08-06). Ele já foi descrito como "igual
+ao promoavatar": não é mais. O motor do reel (`scripts/`), os layouts
+(`templates/`) e a skill de edição vivem AQUI, e os dois sistemas evoluem
+separados — o promoavatar está congelado. Mexer nos alvos, prompts ou templates
+de lá **não afeta nada aqui**.
 
 ## 📖 Guia de uso
 
@@ -82,6 +87,35 @@ Duas consequências que nenhum código desfaz: legenda queimada vem enquadrada
 para 16:9 e no reel 9:16 pode ser cortada ou colidir com a base; e se o reel
 também for montado com `| legenda`, saem **duas**. Ligar uma é decidir desligar
 a outra. Aqui isso vale por três vídeos por público, não um.
+
+## O que roda sem modelo
+
+Das quatro fases, **só a de texto usa LLM**. As outras três são função:
+
+| fase | como roda |
+|---|---|
+| texto | agente — escreve os 3 roteiros por público |
+| avatar (`\| estudio`) | **script** Playwright no estúdio do HeyGen (~50s/público) |
+| baixar | função — acha pelo TÍTULO e baixa |
+| reel | **função** — `scripts/montar-reel.py`, e entrega no canal |
+
+Medido no promoavatar antes do porte: o custo por vídeo caiu de **US$ 3,09 para
+US$ 0,18** quando avatar e reel deixaram de ser agente. O detalhamento está em
+`inemaccbot/docs/custo-por-fase-a19-a29.md`.
+
+## O motor do reel mora aqui
+
+`scripts/montar-reel.py` encadeia: preparar → portão 1 (lint + ritmo) → render →
+revisor → CTA → QC. Nomes fixos (`motion/corpo.mp4`, `final/reel.mp4`,
+`qc/mosaico.png`), exit 3 quando um portão reprova.
+
+**O portão de entrada é a seção `## IMAGENS` do texto** (regra 11b do prompt da
+fase 1): uma linha por SEGMENTO da fala, com `headline:` e `hook:`. Sem ela o
+`preparar.py` sai com exit 3 e o reel não é montado — não é preferência de
+estilo, é o que impede o reel de sair com painel vazio ou headline inventada.
+
+Os layouts estão em `templates/` e o padrão é o `template` da raiz do
+`flow.json`; um alvo pode cravar o seu.
 
 ## Atenção: tudo aqui é congelado na criação
 

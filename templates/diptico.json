@@ -1,0 +1,29 @@
+{
+  "nome": "diptico",
+  "descricao": "Metade e metade: imagem grande em cima (960px), avatar embaixo (960px). SEM terceira faixa — resolve por estrutura o vazio de 608px que a base costumava ter. Peso na imagem. Bom para 'mito versus realidade' e comparação, onde a imagem carrega o contraste.",
+  "canvas": { "largura": 1080, "altura": 1920 },
+  "cores": {
+    "fundo": "#0E1116",
+    "texto": "#FFFFFF",
+    "acento": "#F5A623"
+  },
+  "faixas": {
+    "topo": {
+      "y": 0, "altura": 960,
+      "fonte": "imagens",
+      "escurecer": 0.66,
+      "headline": {
+        "tamanho": 82, "peso": 900, "entrelinha": 1.03,
+        "margem_lateral": 52, "ancora": "rodape", "base_em": 64,
+        "maiusculas": true
+      }
+    },
+    "meio": { "y": 960, "altura": 960, "fonte": "avatar", "audio": true }
+  },
+  "transicao": {
+    "flash": true,
+    "duracao": 0.42,
+    "escala_entrada": 1.08,
+    "pulso_max_s": 3.6
+  }
+}

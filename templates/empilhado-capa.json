@@ -1,0 +1,36 @@
+{
+  "nome": "empilhado-capa",
+  "descricao": "Capa de impacto: topo com imagem trocando por segmento + headline sobreposta, avatar no meio, base como PAINEL de texto. É o formato que o promoavatar usava escrito à mão.",
+  "canvas": { "largura": 1080, "altura": 1920 },
+  "cores": {
+    "fundo": "#0E1116",
+    "texto": "#FFFFFF",
+    "acento": "#F5A623",
+    "base_fundo": "radial-gradient(120% 140% at 50% 0%, #101826 0%, #05070a 60%)"
+  },
+  "faixas": {
+    "topo": {
+      "y": 0, "altura": 704,
+      "fonte": "imagens",
+      "escurecer": 0.62,
+      "headline": {
+        "tamanho": 76, "peso": 900, "entrelinha": 1.04,
+        "margem_lateral": 48, "base_em": 56,
+        "maiusculas": true
+      }
+    },
+    "meio": { "y": 704, "altura": 608, "fonte": "avatar", "audio": true },
+    "base": {
+      "y": 1312, "altura": 608,
+      "fonte": "texto",
+      "painel": true,
+      "hook": { "tamanho": 56, "peso": 800, "entrelinha": 1.16, "margem_lateral": 56 }
+    }
+  },
+  "transicao": {
+    "flash": true,
+    "duracao": 0.42,
+    "escala_entrada": 1.08,
+    "pulso_max_s": 3.6
+  }
+}

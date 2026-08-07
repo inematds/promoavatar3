@@ -263,7 +263,6 @@
   "avatar_id": "fda4a6217ea3496a97c96339b8abb902",
   "voice_id": "29583ec22d284e52b1e07f3ba9ef9d1f",
   "engine": "avatar_iii",
-  "motor_repo": "promoavatar",
   "templates_dir": "templates",
   "template": "empilhado-capa"
 }

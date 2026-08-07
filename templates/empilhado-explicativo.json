@@ -1,0 +1,37 @@
+{
+  "nome": "empilhado-explicativo",
+  "descricao": "Dois clipes: avatar no meio (dono do áudio) e o VÍDEO EXPLICATIVO daquela fala na base, mudo e em loop. O topo segue com imagem por segmento + headline. Use quando existe explicativo em vídeo — a base deixa de ser texto e passa a mostrar o assunto.",
+  "canvas": { "largura": 1080, "altura": 1920 },
+  "cores": {
+    "fundo": "#0E1116",
+    "texto": "#FFFFFF",
+    "acento": "#F5A623",
+    "base_fundo": "#05070a"
+  },
+  "faixas": {
+    "topo": {
+      "y": 0, "altura": 704,
+      "fonte": "imagens",
+      "escurecer": 0.62,
+      "headline": {
+        "tamanho": 76, "peso": 900, "entrelinha": 1.04,
+        "margem_lateral": 48, "base_em": 56,
+        "maiusculas": true
+      }
+    },
+    "meio": { "y": 704, "altura": 608, "fonte": "avatar", "audio": true },
+    "base": {
+      "y": 1312, "altura": 608,
+      "fonte": "explicativo",
+      "loop": true,
+      "mudo": true,
+      "comment": "Áudio mestre é sempre o avatar. O explicativo entra MUDO e em loop até a fala acabar — nunca estica o reel."
+    }
+  },
+  "transicao": {
+    "flash": true,
+    "duracao": 0.42,
+    "escala_entrada": 1.08,
+    "pulso_max_s": 3.6
+  }
+}

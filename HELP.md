@@ -5,7 +5,7 @@ HeyGen, `/aprovar C#N` libera o resto), com uma diferença: cada público rende
 **três roteiros** em vez de um.
 
 ```
-/promoavatar3 <assunto> [| alvos=jovens-alc,jovens-pro] [| legenda] [| versao=N] [| de=<fase>] [| sombra]
+/promoavatar3 <assunto> [| estudio] [| alvos=jovens-alc,jovens-pro] [| versao=N] [| de=<fase>] [| sombra]
 ```
 
 Referência: `C#7` (o `promoavatar` usa `A#`, o `promoclub` usa `P#`). O bot
@@ -39,10 +39,35 @@ mão.** O normal é filtrar:
 1. **texto** (escopo fluxo, pausa depois) — um arquivo por alvo em
    `textos/C<N>/<alvo>.md`, mais um `resumo-estrategico.md`. O bot manda a
    `### FALA` de cada um no chat e PARA.
-2. **baixar** (por alvo) — depois do `/aprovar C#N`, procura no HeyGen o vídeo
+2. **avatar** (por alvo, OPCIONAL) — quem gera o vídeo. Sem opção nenhuma, é
+   você no estúdio. Ver "As quatro rotas de avatar" abaixo.
+3. **baixar** (por alvo) — depois do `/aprovar C#N`, procura no HeyGen o vídeo
    cujo nome é exatamente `C<N>-<alvo>-v1` e baixa o MP4 — a versão COM
    legenda queimada quando o estúdio gravou com ela, a limpa quando não.
-3. **reel** (por alvo) — monta o reel 9:16 no canal do público.
+   **Prazo: 40h.** A fila de renderização do HeyGen chega a 36h, e esperar não é
+   erro — o teto existe só para o vídeo que nunca foi gerado.
+4. **reel** (por alvo) — monta o reel 9:16 e **entrega no canal do público**
+   (`yt-pub-livesN/imports/videos`). É `kind: function`: sem agente, sem token.
+   Roda um por vez (a fila `render` é a GPU).
+
+## As quatro rotas de avatar — só UMA por fluxo
+
+| você escreve | quem gera | de onde sai o custo |
+|---|---|---|
+| *(nada)* | **você**, no estúdio | assinatura |
+| `\| estudio` | o bot, por SCRIPT no estúdio (Playwright) | créditos da assinatura |
+| `\| creditos` | o bot, pela CLI (OAuth) | créditos da assinatura |
+| `\| api` | o bot, pela chave de API | **carteira em US$** (~US$ 0,73/vídeo) |
+
+Pedir duas é recusado na criação: juntas gerariam o mesmo vídeo duas vezes.
+
+**`| estudio`** clona o `TEMPLATE-AVATAR` e herda cenário, avatar, voz e motor —
+o vídeo sai igual ao que você gravaria à mão. Medido em 48 avatares: **~50s por
+público, zero falha, zero token**. As outras duas rotas montam o vídeo SEM
+template (mesmo rosto e voz, cenário diferente).
+
+Com 36 alvos, a rota é séria: são 36 avatares em série (~31 min) e depois a fila
+do HeyGen. Filtre com `| alvos=` na primeira vez.
 
 ## O nome no estúdio
 
@@ -61,16 +86,21 @@ porque título longo já truncou no HeyGen em produção e derrubou o match.
 
 Imprime fase × alvo × fila × tarefa e **não enfileira nada**.
 
-OS AVATARES: SUA MÃO OU A API
+## O portão continua
 
-Por padrão você grava no HeyGen (é o de sempre). Com `| api`, o BOT gera —
-e isso gasta da carteira pré-paga da HeyGen (~US$ 1 por minuto de vídeo).
+Nenhuma rota de avatar tira o portão: você revisa os textos e dá `/aprovar C#N`
+antes de gastar. Para a esteira inteira sem parar, some `| sem-portao`.
 
-  /promoavatar3 <assunto> | api
-  /promoavatar3 <assunto> | api | sem-portao   gera E não para para aprovar
+```
+/promoavatar3 <assunto> | estudio
+/promoavatar3 <assunto> | estudio | sem-portao    gera E não para para aprovar
+```
 
-`| api` NÃO tira o portão: você ainda revisa os textos e dá /aprovar antes de
-gastar. Para a esteira inteira sem parar, peça as duas flags.
+Confira antes com `| sombra`: a fase de avatar só aparece no plano quando a
+opção dela está ligada.
 
-Confira antes com `| sombra`: a fase `gerar` só aparece no plano quando a
-opção `| api` está ligada.
+## `| legenda` não vale mais aqui
+
+A fase de reel é uma função, e o `montar-reel.py` não legenda — a legenda vem
+queimada do estúdio quando você a liga lá. Pedir `| legenda` é **recusado na
+criação**, em vez de entregar reel sem legenda dizendo que legendou.

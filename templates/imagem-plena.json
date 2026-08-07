@@ -1,0 +1,56 @@
+{
+  "nome": "imagem-plena",
+  "descricao": "A imagem ocupa o QUADRO INTEIRO e o avatar entra num recorte arredondado no TOPO-DIREITA. O canto inferior é proibido: em produção a interface da rede (legenda, @, botões) cobre o rodapé e o avatar simplesmente não apareceria. Inverte o peso: a imagem conta a história, a pessoa comenta. Bom para 'pergunta incômoda', 'previsão', 'consequência inesperada'.",
+  "canvas": {
+    "largura": 1080,
+    "altura": 1920
+  },
+  "cores": {
+    "fundo": "#0E1116",
+    "texto": "#FFFFFF",
+    "acento": "#F5A623"
+  },
+  "faixas": {
+    "topo": {
+      "y": 0,
+      "altura": 1920,
+      "fonte": "imagens",
+      "escurecer": 0.58,
+      "headline": {
+        "tamanho": 88,
+        "peso": 900,
+        "entrelinha": 1.02,
+        "margem_lateral": 56,
+        "ancora": "topo",
+        "topo_em": 420,
+        "maiusculas": true
+      },
+      "imagem": {
+        "largura": 1088,
+        "altura": 1920,
+        "_nota": "multiplos de 16; o preparar.py gera nesta proporcao em vez de assumir a faixa do topo"
+      }
+    },
+    "meio": {
+      "fonte": "avatar",
+      "audio": true,
+      "forma": "pip",
+      "pip": {
+        "largura": 468,
+        "altura": 264,
+        "ancora_v": "topo",
+        "topo": 72,
+        "ancora_h": "direita",
+        "direita": 48,
+        "raio": 28,
+        "borda": 3
+      }
+    }
+  },
+  "transicao": {
+    "flash": true,
+    "duracao": 0.42,
+    "escala_entrada": 1.06,
+    "pulso_max_s": 3.6
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "_comentario": [
+    "Mapa FORMATO EDITORIAL -> LAYOUT. O formato vem da linha `Formato escolhido:`",
+    "que a fase de texto grava em cada arquivo de publico (PASSO ZERO do",
+    "fase1-texto.md) e que voce ja aprova no portao — entao o layout decorre de",
+    "uma decisao editorial revisada, e ninguem escolhe nada em tempo de render.",
+    "",
+    "Precedencia (resolvida pelo preparar.py): --template explicito > campo",
+    "`template` do ALVO no flow.json > este mapa > `template` da raiz do flow.json.",
+    "Formato que nao estiver aqui cai no padrao — nao inventa.",
+    "",
+    "No A#19 real a fase de texto escolheu 9 formatos diferentes para 12 publicos,",
+    "entao isto produz variacao de verdade sem ninguem decidir nada."
+  ],
+  "mapa": {
+    "mito versus realidade": "diptico",
+    "comparação": "diptico",
+    "comparacao": "diptico",
+    "pergunta incômoda": "imagem-plena",
+    "pergunta incomoda": "imagem-plena",
+    "previsão": "imagem-plena",
+    "previsao": "imagem-plena",
+    "consequência inesperada": "imagem-plena",
+    "consequencia inesperada": "imagem-plena",
+    "o que ninguém te conta": "imagem-plena",
+    "o que ninguem te conta": "imagem-plena",
+    "afirmação provocativa": "empilhado-capa",
+    "afirmacao provocativa": "empilhado-capa",
+    "opinião contrária": "empilhado-capa",
+    "opiniao contraria": "empilhado-capa",
+    "erro comum": "empilhado-capa",
+    "confissão": "empilhado-capa",
+    "confissao": "empilhado-capa",
+    "desmontagem passo a passo": "empilhado-capa"
+  }
+}
