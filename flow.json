@@ -251,13 +251,19 @@
       "id": "reel",
       "escopo": "alvo",
       "fila": "render",
-      "kind": "agent",
-      "tarefa": "reel",
+      "kind": "function",
+      "tarefa": "reel.montar",
       "max_tentativas": 2,
-      "entrega": "capa impacto, público {canal}. O reel segue QUATRO GATILHOS, nesta ordem, e as SOBREPOSIÇÕES do texto da fase 1 já vêm nomeadas assim — use-as: (1) ATENÇÃO nos 0–2s: headline-choque baseada no gatilho \"{gatilho}\", entrando no primeiro frame, legível de relance, sobre a imagem mais forte; (2) RETENÇÃO no miolo: a imagem do topo TROCA a cada segmento e a lacuna de curiosidade aberta no início só fecha perto do fim — nada de tela parada; (3) ENGAJAMENTO: o convite a agir aparece na tela antes do fecho (pergunta para comentar, \"salva isto\" ou \"marca alguém\"), sem competir com a fala; (4) FECHO — quem manda aqui é o TIPO deste alvo: {fecho} O CTA comercial do fluxo, para quando o fecho pedir: {cta}. Use-o SOMENTE se o fecho acima pedir; se ele proibir, o CTA comercial NÃO entra, e isso vale mesmo que as SOBREPOSIÇÕES tragam um. LEGENDA: {legenda} Se as SOBREPOSIÇÕES não trouxerem algum dos quatro, CRIE o que faltar a partir do gatilho do público — nenhum reel sai sem os quatro."
+      "espera": {
+        "intervalo": 120,
+        "timeout": 21600
+      }
     }
   ],
   "avatar_id": "fda4a6217ea3496a97c96339b8abb902",
   "voice_id": "29583ec22d284e52b1e07f3ba9ef9d1f",
-  "engine": "avatar_iii"
+  "engine": "avatar_iii",
+  "motor_repo": "promoavatar",
+  "templates_dir": "templates",
+  "template": "empilhado-capa"
 }

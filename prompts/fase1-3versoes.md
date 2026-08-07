@@ -157,6 +157,66 @@ esta seção, então ela precisa entregar, nesta ordem e nomeada assim:
   nos comentários, "salva isto", "marca alguém que precisa". Escolha UM.
 - **CTA (fecho)** — a ordem final, curta e imperativa, junto do CTA falado.
 
+**11b. As IMAGENS também são suas — uma por SEGMENTO da fala.** Quem monta o
+reel (fase 3) não conhece o público nem a tese: só recebe o texto que sobrou. Se
+os prompts de imagem não vierem daqui, eles são inventados na hora e caem sempre
+no mesmo clichê de banco de imagens (medido no promoavatar em 2026-08-03: cinco
+prompts diferentes produziram cinco variações de "pessoa de perfil diante de
+holograma ciano"). Decidida aqui, a imagem é **revisada por você no portão**,
+antes de gastar render.
+
+**Uma imagem por SEGMENTO, não uma por gatilho.** A imagem do topo troca a cada
+segmento — é o motor de re-hook do reel. Os quatro gatilhos da regra 11 são
+outro eixo: funções narrativas espalhadas AO LONGO da fala, não a segmentação.
+
+Quebre a FALA nos pontos em que o assunto ou o ângulo MUDA — numa fala de 25–60s
+isso dá tipicamente **6 a 10 segmentos**. Escreva uma seção `## IMAGENS` com uma
+linha por segmento, numeradas na ordem da fala:
+
+```
+IMAGEM <N> — "<as 4-6 primeiras palavras do segmento>" [gatilho, se houver]
+headline: PRIMEIRA LINHA | SEGUNDA LINHA
+hook: uma frase de painel com {a palavra-chave} entre chaves
+<prompt visual pronto, em inglês, para ir direto ao gerador>
+```
+
+**As duas linhas são obrigatórias — `headline` E `hook`.** Vão para faixas
+diferentes da tela e nenhuma substitui a outra. **Sem elas o motor do reel FALHA
+com exit 3** — não é preferência de estilo, é o portão do `preparar.py`.
+
+- **`headline`**: o texto que aparece NA TELA sobre a imagem. Duas linhas
+  separadas por `|` (o trecho depois do `|` sai na cor de acento), máximo ~5
+  palavras por linha, legível de relance, sem ponto final. Não repita a fala
+  palavra por palavra — repetir vira legenda, e legenda é outra coisa. A da
+  IMAGEM 1 é a mais importante: é o frame 0, a capa no feed.
+- **`hook`**: o texto da faixa de BASE, o painel de baixo. Duas linhas cheias,
+  com a palavra-chave entre `{chaves}`. Não repita a headline: a headline é o
+  cartaz sobre a imagem, o hook é o comentário que aprofunda ou vira a chave.
+  Escreva o hook em TODAS as imagens mesmo que o layout possa não ter base — se
+  faltar e o layout tiver, ela sai **vazia** (aconteceu no A#23: painel preto).
+
+**IMAGEM 1 é a CAPA e carrega a PROVOCAÇÃO**, não o tema. Três testes, e ela
+precisa passar nos três: **(a) transferência** — se serviria para qualquer outro
+reel sobre o mesmo tema, está errada; **(b) polegar** — reduzida a 1/4 e sem a
+headline, ainda provoca uma pergunta?; **(c) tensão** — mostra o que se PERDE, o
+que QUEBRA, o "depois" chocante, ou só ilustra o objeto do assunto? Só o objeto =
+refazer.
+
+**Proibidos** (são o que o gerador produz sozinho quando o prompt é vago): pessoa
+de perfil diante de tela/holograma brilhante · HUD circular · chuva de código
+matrix · cérebro de circuitos · robô apertando mão de humano · lâmpada de ideia.
+**Prefira** a consequência concreta, o objeto fora de lugar, a escala inesperada,
+o antes/depois no mesmo quadro.
+
+**Sem texto embutido na imagem** — o texto entra como camada no reel, e letra
+gerada por IA sai torta. Não peça conteúdo escrito na cena ("uma placa dizendo
+X"): testado, o gerador obedece à proibição de lettering e deixa o lugar VAZIO.
+Descreva o gesto ou a marca (giz circulando algo, papel rabiscado).
+
+**Não conte com posicionamento relativo** ("os dois do MESMO lado da mesa" foi
+ignorado no teste, e parceria virou confronto). Se a composição carrega o
+significado, escolha uma cena em que ela seja natural.
+
 **12. Nome que você não entende, você NÃO usa.** Se o assunto trouxer um nome
 próprio cujo papel não está explicado (marca, plataforma, pessoa), não o cite
 como se o público soubesse o que é. Ou o assunto explica, ou a frase sai.
@@ -234,9 +294,10 @@ Se não, reescreva.
    contrato: não escolha outra pasta, outro repo nem outro slug. `<alvo>` é
    exatamente o nome do alvo no pipeline (`jovens-alc`, `mulheres-pro`,
    `40mais-aut`…), em minúsculas, sem acento e COM o sufixo.
-4. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / ESTRUTURA exatamente como
-   a skill manda, mais uma linha `Tipo:` e uma linha `Formato escolhido:` no
-   topo. A seção falada começa com `### FALA` — é ela que vai para o HeyGen, e o
+4. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / IMAGENS / ESTRUTURA
+   exatamente como a skill manda, mais uma linha `Tipo:` e uma linha
+   `Formato escolhido:` no topo. `IMAGENS` é a da regra 11b e vem logo depois de
+   SOBREPOSIÇÕES — **o motor do reel falha (exit 3) sem ela**. A seção falada começa com `### FALA` — é ela que vai para o HeyGen, e o
    bot a lê deste arquivo para mandar no chat.
    Antes de gravar, releia a FALA contra as REGRAS DE ESCRITA e responda a si
    mesmo: **qual é o gancho, e o que muda na vida desta pessoa?** Se a resposta
