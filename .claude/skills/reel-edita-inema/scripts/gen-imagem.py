@@ -9,6 +9,11 @@ Uso:
   python3 gen-imagem.py --prompt "..." --out capa.png [--model flux2-klein] [--steps 4] [--seed 7] [--host http://localhost:8000]
   python3 gen-imagem.py --prompt "..." --out topo.png --width 1088 --height 704
 
+Host e modelo saem de INEMAIMG_HOST / INEMAIMG_MODEL quando definidos (default:
+localhost:8000 e flux2-klein). Numa maquina sem GPU, apontar INEMAIMG_HOST para
+o inemaimg de outra maquina (tunel SSH) e o caminho barato; provedor de nuvem
+(kie/fal/agnes) NAO cabe aqui, porque muda o corpo e a resposta, nao so o host.
+
 NAO mexa em --steps: o flux2-klein e step-distilled e a doc do inemaimg e
 explicita — "piora acima de 4". Medido em 2026-08-03: subir para 24 nao melhora,
 so muda a imagem (outra trajetoria de amostragem) e custa 5x o tempo.
@@ -17,13 +22,26 @@ NAO troque para flux2-dev: ele nao sobe nesta maquina de proposito (falta
 bitsandbytes, e carregar o dev atrapalha a GPU). O erro 500
 "PackageNotFoundError: bitsandbytes" e esperado, nao e bug para consertar.
 """
-import argparse, base64, hashlib, json, sys, urllib.request
+import argparse, base64, hashlib, json, os, sys, urllib.request
+
+# Host e modelo vêm do AMBIENTE, com o default sendo exatamente o de sempre.
+#
+# Por quê: numa VPS não há inemaimg em localhost:8000, e o caminho literal fazia
+# toda imagem falhar com "o servidor esta no ar?". Com INEMAIMG_HOST a mesma
+# máquina pode apontar para a GPU de casa (túnel SSH) sem editar script — e sem
+# mudar nada aqui, onde o default continua valendo.
+#
+# Trocar de PROVEDOR (kie, fal, agnes) é outra coisa: muda o formato do corpo e
+# da resposta, não só o endereço. Isso é adaptador, não variável — não finja que
+# apontar INEMAIMG_HOST para outra API resolve.
+HOST_PADRAO = os.environ.get("INEMAIMG_HOST", "http://localhost:8000")
+MODELO_PADRAO = os.environ.get("INEMAIMG_MODEL", "flux2-klein")
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--prompt", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--model", default="flux2-klein")
+    ap.add_argument("--model", default=MODELO_PADRAO)
     ap.add_argument("--steps", type=int, default=4)
     ap.add_argument("--seed", type=int, default=7)  # fixo p/ determinismo do reel
     # Variedade SEM perder determinismo.
@@ -53,7 +71,7 @@ def main():
     # 128-2048, incrementos de 16 (1088 = 68x16, 704 = 44x16).
     ap.add_argument("--width", type=int, default=1024)
     ap.add_argument("--height", type=int, default=1024)
-    ap.add_argument("--host", default="http://localhost:8000")
+    ap.add_argument("--host", default=HOST_PADRAO)
     a = ap.parse_args()
 
     seed = a.seed

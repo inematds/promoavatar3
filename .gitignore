@@ -7,3 +7,7 @@ output/
 # Exceção: o CTA não é artefato regenerável, é ativo fixo do domínio (~60 KB) e
 # a instalação quebra sem ele.
 !cta/*.mp4
+
+# Bytecode do Python: lixo binário, e traz caminho absoluto embutido.
+__pycache__/
+*.pyc
