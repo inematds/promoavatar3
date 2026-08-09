@@ -5,9 +5,13 @@ Três vídeos por público, em vez de um. O bot escreve os textos e PARA;
 
 **Este projeto é AUTÔNOMO** (desde 2026-08-06). Ele já foi descrito como "igual
 ao promoavatar": não é mais. O motor do reel (`scripts/`), os layouts
-(`templates/`) e a skill de edição vivem AQUI, e os dois sistemas evoluem
-separados — o promoavatar está congelado. Mexer nos alvos, prompts ou templates
-de lá **não afeta nada aqui**.
+(`templates/`) e a skill de edição vivem AQUI. Mexer nos alvos, prompts ou
+templates de lá **não afeta nada aqui**.
+
+O `promoavatar` esteve congelado de 2026-08-06 a 2026-08-09 e **voltou a evoluir**.
+Isso não junta os dois: continuam sistemas separados, cada um com seu motor e seus
+alvos. A diferença de propósito é a de sempre — lá é **um** vídeo por público, aqui
+são **três** (alcance, autoridade, promocional).
 
 ## 📖 Guia de uso
 
