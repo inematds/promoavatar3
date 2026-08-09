@@ -19,6 +19,40 @@ referência com prefixo trocado.
 Uso, opções e a tabela dos três tipos: `HELP.md` (ou `/promoavatar3 help` no
 chat). As decisões de engenharia e o porquê de cada uma: `CLAUDE.md`.
 
+## O que é deste repo, e o que é do bot
+
+A divisão vale para os dois lados e evita a documentação em dobro que envelhece
+desencontrada:
+
+| aqui (domínio) | no [`inemaccbot`](https://github.com/inematds/inemaccbot) (motor) |
+|---|---|
+| **quem** é o público (`alvos` no `flow.json`), o gatilho e o fecho de cada um | como uma fila funciona, lease, retomada, portão |
+| para **qual canal** vai (`lives2`, `lives22`…) — pelo NOME, nunca o caminho | onde esse nome mora no disco |
+| o **prompt** da fase de texto (`prompts/`) | como um prompt de fase é executado |
+| o **template** de reel (`templates/`) e o motor (`scripts/`) | como a fase `reel.montar` dispara o motor |
+| o `TEMPLATE-AVATAR` e o motor de voz (`engine`, `voice_id`) | as rotas `\| api`, `\| creditos`, `\| estudio` e de que bolso cada uma sai → [`docs/rotas-de-avatar.md`](https://github.com/inematds/inemaccbot/blob/master/docs/rotas-de-avatar.md) |
+| o CTA (`cta/cta-9x16.mp4`) | instalação, `.env`, systemd, comandos do chat |
+
+Regra curta: **se muda com o público, é daqui; se muda com a máquina, é de lá.**
+
+## Onde mudar o quê
+
+| quero mudar | arquivo |
+|---|---|
+| público, gatilho, fecho, canal | `flow.json` → `alvos` |
+| como o texto é escrito (as 3 versões, as `## IMAGENS`) | `prompts/fase1-3versoes.md` |
+| avatar, voz, motor, template do estúdio | `flow.json` → `avatar_id`, `voice_id`, `engine`, `template` |
+| o layout do reel | `templates/` (e `template` na raiz do `flow.json`) |
+| o motor do reel | `scripts/montar-reel.py` e vizinhos |
+| a ajuda que o chat responde | `HELP.md` |
+| o vídeo de CTA | `cta/cta-9x16.mp4` (versionado desde 2026-08-08) |
+
+**Nada aqui tem caminho de máquina.** O que dependia (`localhost:8000` do
+inemaimg, a chave do Groq) virou variável de ambiente com o mesmo default de
+antes — `INEMAIMG_HOST`, `INEMAIMG_MODEL`, `GROQ_ENV_PATH`, documentadas no
+`.env.example` do bot. O teste que pega regressão é
+`git grep /home/ -- .` dar zero em arquivo versionado.
+
 ## Os três tipos, e por que não são três variações
 
 | sufixo | tipo | duração | o que o público faz depois |
