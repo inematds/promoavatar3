@@ -53,6 +53,34 @@ antes — `INEMAIMG_HOST`, `INEMAIMG_MODEL`, `GROQ_ENV_PATH`, documentadas no
 `.env.example` do bot. O teste que pega regressão é
 `git grep /home/ -- .` dar zero em arquivo versionado.
 
+## As imagens: aqui GPU, fora API
+
+`scripts/gen-imagem.py` fala com mais de um provedor. **O default não mudou** —
+quem roda em casa continua na GPU local, sem configurar nada:
+
+| `IMG_PROVEDOR` | quem gera | custo | seed |
+|---|---|---|---|
+| `inemaimg` *(default)* | a GPU local, `flux2-klein` | zero | **respeitado** |
+| `agnes` | API da Agnes AI, `agnes-image-2.1-flash` | **US$ 0**, ~10 s/imagem | **não existe** |
+| `kie`, `fal` | — | — | **não implementados**: o script recusa em vez de fingir |
+
+Na VPS: `IMG_PROVEDOR=agnes` e a chave em `IMG_ENV_PATH` (arquivo com
+`AGNES_API_KEY=`, `chmod 600`) — ou `AGNES_API_KEY` direto no ambiente.
+
+**Duas coisas mudam ao sair da GPU, e nenhuma tem conserto aqui:**
+
+1. **O determinismo cai.** A Agnes não aceita seed, então a mesma `--seed-key`
+   gera imagem diferente a cada render. Só o inemaimg cumpre "mesmo reel, mesma
+   imagem" — inclusive por túnel (`ssh -R 8000:localhost:8000 <vps>`), que é a
+   opção a considerar se a reprodutibilidade importar mais que a independência.
+2. **O tamanho pedido vira sugestão.** Medido: pedimos 1088x736 e voltou
+   1248x832. O adaptador **normaliza** cortando pelo centro (nunca esticando,
+   que deformaria rosto) — sem isso o `preparar.py` regeraria a imagem toda vez,
+   porque ele compara dimensão para decidir reaproveitar.
+
+Detalhe por provedor, com o que foi medido em cada um:
+[`inemaimg/docs/prompt-por-provedor.md`](https://github.com/inematds/inemaimg/blob/main/docs/prompt-por-provedor.md).
+
 ## Os três tipos, e por que não são três variações
 
 | sufixo | tipo | duração | o que o público faz depois |
