@@ -3,3 +3,7 @@
 output/
 *.mp4
 *.log
+
+# Exceção: o CTA não é artefato regenerável, é ativo fixo do domínio (~60 KB) e
+# a instalação quebra sem ele.
+!cta/*.mp4
