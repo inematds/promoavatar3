@@ -1,2 +1,0 @@
-pessoa-comum-alc: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-VIRAL/pessoa-comum-alc.md
-RESULT: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-VIRAL/_resultado.txt
