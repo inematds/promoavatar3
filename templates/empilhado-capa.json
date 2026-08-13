@@ -1,7 +1,10 @@
 {
   "nome": "empilhado-capa",
   "descricao": "Capa de impacto: topo com imagem trocando por segmento + headline sobreposta, avatar no meio, base como PAINEL de texto. É o formato que o promoavatar usava escrito à mão.",
-  "canvas": { "largura": 1080, "altura": 1920 },
+  "canvas": {
+    "largura": 1080,
+    "altura": 1920
+  },
   "cores": {
     "fundo": "#0E1116",
     "texto": "#FFFFFF",
@@ -10,21 +13,37 @@
   },
   "faixas": {
     "topo": {
-      "y": 0, "altura": 704,
+      "y": 0,
+      "altura": 704,
       "fonte": "imagens",
       "escurecer": 0.62,
       "headline": {
-        "tamanho": 76, "peso": 900, "entrelinha": 1.04,
-        "margem_lateral": 48, "base_em": 56,
+        "tamanho": 76,
+        "peso": 900,
+        "entrelinha": 1.04,
+        "margem_lateral": 48,
+        "base_em": 56,
         "maiusculas": true
       }
     },
-    "meio": { "y": 704, "altura": 608, "fonte": "avatar", "audio": true },
+    "meio": {
+      "y": 704,
+      "altura": 608,
+      "fonte": "avatar",
+      "audio": true
+    },
     "base": {
-      "y": 1312, "altura": 608,
+      "y": 1312,
+      "altura": 608,
       "fonte": "texto",
       "painel": true,
-      "hook": { "tamanho": 56, "peso": 800, "entrelinha": 1.16, "margem_lateral": 56 }
+      "hook": {
+        "tamanho": 66,
+        "peso": 800,
+        "entrelinha": 1.2,
+        "margem_lateral": 56,
+        "respiro_linhas": 2
+      }
     }
   },
   "transicao": {

@@ -77,6 +77,26 @@ def hook_html(txt: str) -> str:
     return out + esc(resto)
 
 
+ALTURA_BASE_PADRAO = 608
+
+def topo_do_hook(hk: dict) -> int:
+    """Onde o texto da base COMECA, em px a partir do topo da faixa.
+
+    Era centralizado na vertical (`top:50%`), e no reel pronto isso deixava a
+    frase solta no meio de 608px, longe do avatar. O dono pediu "quase no topo
+    do quadro inferior, com respiro de 2 linhas" — entao o respiro e medido em
+    LINHAS do proprio texto, nao em pixels soltos: mudar o corpo da letra move o
+    texto junto, sem ninguem ter que recalcular margem.
+
+    Teto na metade da faixa: um `respiro_linhas` grande demais empurraria a
+    frase para fora do quadro sem erro nenhum — so um reel com a base vazia.
+    """
+    tamanho = hk.get("tamanho", 56)
+    entrelinha = hk.get("entrelinha", 1.16)
+    linhas = hk.get("respiro_linhas", 2)
+    return min(round(linhas * tamanho * entrelinha), ALTURA_BASE_PADRAO // 2)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--template", default=None,
@@ -208,7 +228,7 @@ def main() -> int:
         display:flex;align-items:center;justify-content:center}}
       #base video{{width:100%;height:100%;object-fit:cover}}
       #base .hook{{position:absolute;left:{hk.get('margem_lateral',56)}px;
-        right:{hk.get('margem_lateral',56)}px;top:50%;transform:translateY(-50%);opacity:0;
+        right:{hk.get('margem_lateral',56)}px;top:{topo_do_hook(hk)}px;opacity:0;
         font-size:{hk.get('tamanho',56)}px;font-weight:{hk.get('peso',800)};
         line-height:{hk.get('entrelinha',1.16)};color:var(--txt);text-align:center}}
       #base .hook .kw{{color:var(--ac)}}
