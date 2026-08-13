@@ -142,7 +142,11 @@ não ficar vazia) e a pergunta que você quer nos comentários.
 Como o resumo diz a posição escolhida, você discorda dela **no portão**, antes de
 gerar avatar nenhum. Aqui isso vale três renders manuais por público, não um.
 
-## Legenda: quem decide é o estúdio
+## Legenda: a do reel é nossa, a do estúdio é herdada
+
+Desde 2026-08-13 **o reel legenda por default** (palavra a palavra, âmbar na
+palavra-chave — `docs/legenda.md`), com o mesmo motor do promoavatar. A do
+estúdio é outra coisa, e vem de fora:
 
 A fase `baixar` prefere o `video_url_caption` (o MP4 com a legenda **queimada**)
 quando a HeyGen o devolve preenchido, e cai no `video_url` limpo quando não vem
@@ -150,9 +154,12 @@ quando a HeyGen o devolve preenchido, e cai no `video_url` limpo quando não vem
 estúdio, o reel sai com ela; gravou sem, sai sem — o bot não escolhe.
 
 Duas consequências que nenhum código desfaz: legenda queimada vem enquadrada
-para 16:9 e no reel 9:16 pode ser cortada ou colidir com a base; e se o reel
-também for montado com `| legenda`, saem **duas**. Ligar uma é decidir desligar
-a outra. Aqui isso vale por três vídeos por público, não um.
+para 16:9 e no reel 9:16 pode ser cortada ou colidir com a base; e ela soma com
+a legenda do REEL, que desde 2026-08-13 é **ligada por default** aqui (o motor
+passou a legendar, igual ao promoavatar — ver `docs/legenda.md`). Gravou com
+legenda no estúdio e deixou a do reel ligada? Saem **duas**. Escolher uma é
+desligar a outra, e a do estúdio se desliga no `TEMPLATE-AVATAR`, não aqui.
+Neste repo isso vale por três vídeos por público, não um.
 
 ## O que roda sem modelo
 

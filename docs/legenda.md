@@ -2,21 +2,10 @@
 
 Legenda palavra a palavra na faixa do avatar, **ligada por default**.
 
-> **Para quem for implementar aqui:** este desenho foi fechado E IMPLEMENTADO no
-> repo `promoavatar`. Copie de lá: `scripts/legendas.py`, o bloco de legenda do
-> `montar.py`, o nó `faixas.meio.legenda` do template, o `--sem-legenda` do
-> `preparar.py`/`montar-reel.py` e `tests/test_legendas.py`. As decisões de
-> produto estão fechadas — não as reabra. Mas as referências `arquivo:linha`
-> deste doc são do `promoavatar` e **precisam ser reconferidas aqui**: este repo
-> virou autônomo (motor, layouts e skill próprios, `fda1c72`) e não há garantia
-> de que as linhas coincidam. Se alguma diferença deste repo mudar o desenho,
-> avise antes de improvisar.
-
-**Estado neste repo: nada implementado ainda.** No `promoavatar` o motor está
-pronto e verificado (`legendas.py`, camada no `montar.py`, nó no template,
-`--sem-legenda` em `preparar.py` e `montar-reel.py`); lá falta só a peça do
-`inemaccbot` — a flag `| legenda=nao` —, que é a única que exige restart do bot.
-Ver "Ordem de aplicação".
+**Estado: o motor está implementado e verificado neste repo** (`legendas.py`,
+camada no `montar.py`, nó no template, `--sem-legenda` em `preparar.py` e
+`montar-reel.py`). Falta só a peça do `inemaccbot` — a flag `| legenda=nao` —
+que é a única que exige restart do bot; ver "Ordem de aplicação".
 
 ## Decisões
 
@@ -147,7 +136,7 @@ remoção, máscara nem inpaint no pipeline. Ligar as duas é ficar com duas.
 E não dá para recuperá-la como texto: a API não entrega legenda de vídeo já
 renderizado — medido em 2026-08-07, ver `README.md`.
 
-## Verificação (feita no `promoavatar` — repetir aqui)
+## Verificação (feita)
 
 - `tests/test_legendas.py` — 19 testes sobre `legendas.py`: keywords só das
   SOBREPOSIÇÕES, rótulos e palavras de função fora, caixa alta sem pontuação,
@@ -166,7 +155,7 @@ renderizado — medido em 2026-08-07, ver `README.md`.
 - **os dois caminhos do `preparar.py`:** com legenda (117 palavras no HTML,
   `@font-face` presente) e `--sem-legenda` (zero).
 
-## Verificação (o que ninguém fez ainda, em nenhum repo)
+## Verificação (o que ainda não foi feito)
 
 - **`legendas.py` sobre o `transcript.json` real do A#35:** contagem de palavras
   bate, nenhuma lacuna temporal entre palavras consecutivas, e as marcadas `kw`

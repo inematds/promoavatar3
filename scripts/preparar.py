@@ -177,7 +177,12 @@ def ler_imagens(md: Path) -> list:
     if not md or not md.exists():
         return []
     txt = md.read_text(encoding="utf-8", errors="replace")
-    m = re.search(r"^##\s*IMAGENS\s*$(.*?)(?=^##\s|\Z)", txt, re.M | re.S)
+    # `#{1,3}` e nao `##`: em 2026-08-08 os 48 textos de A#49 a A#52 sairam com
+    # `### IMAGENS`, e TODOS os reels dos quatro fluxos morreram com "sem
+    # segmentos.json". O transcript estava la — faltava o parser aceitar tres
+    # `#`. Como o texto e escrito por LLM, o nivel do cabecalho volta a variar:
+    # quem se adapta e o parser, nao os arquivos.
+    m = re.search(r"^#{1,3}\s*IMAGENS\s*$(.*?)(?=^#{1,3}\s|\Z)", txt, re.M | re.S)
     if not m:
         return []
     itens, atual = [], None
@@ -218,6 +223,9 @@ def main() -> int:
     ap.add_argument("--explicativo", default=None)
     ap.add_argument("--sem-imagens", action="store_true")
     ap.add_argument("--sem-transcricao", action="store_true")
+    ap.add_argument("--sem-legenda", action="store_true",
+                    help="legenda e LIGADA por default (docs/legenda.md); "
+                         "isto desliga")
     ap.add_argument("--flow", default=None,
                     help="flow.json do projeto — de onde saem o template do alvo e o padrao. "
                          "Omitido: usa o do repo deste script, se existir.")
@@ -490,10 +498,33 @@ def main() -> int:
     elif not man.get("template_arquivo"):
         man["html"] = {"erro": f"template nao resolvido: {man.get('template_aviso') or 'sem flow.json/mapa.json'}"}
     else:
+        # ---- legenda (ligada por default) ----
+        # Depende do transcript, que ja saiu do Groq com tempo por palavra.
+        # Sem transcript nao ha o que legendar: avisa e segue sem legenda, em
+        # vez de derrubar o reel inteiro. Ver docs/legenda.md.
+        leg_arq = None
+        if not a.sem_legenda and transcript.exists() and transcript.stat().st_size > 0:
+            leg_arq = edicion / "legendas.json"
+            cmd = [sys.executable, str(AQUI / "legendas.py"),
+                   "--transcript", str(transcript), "--out", str(leg_arq)]
+            if a.textos:
+                cmd += ["--md", a.textos]
+            r = sh(cmd)
+            if r.returncode != 0 or not leg_arq.exists():
+                man["legendas"] = {"erro": (r.stderr or r.stdout).strip()[:200]}
+                leg_arq = None
+            else:
+                man["legendas"] = {"caminho": str(leg_arq)}
+        else:
+            man["legendas"] = {"pulado": True,
+                               "motivo": "--sem-legenda" if a.sem_legenda
+                                         else "sem transcript"}
+
         saida = motion / "index.html"
         r = sh([sys.executable, str(AQUI / "montar.py"),
                 "--manifesto", str(ws / "manifesto.json"),
-                "--segmentos", man["segmentos"], "--out", str(saida)])
+                "--segmentos", man["segmentos"], "--out", str(saida)]
+               + (["--legendas", str(leg_arq)] if leg_arq else []))
         man["html"] = ({"caminho": str(saida)} if r.returncode == 0
                        else {"erro": (r.stderr or r.stdout).strip()[:300]})
 
@@ -513,6 +544,18 @@ def main() -> int:
     if man.get("repeticoes") is not None:
         print(f"repeticoes {man['repeticoes']}"
               + ("  <- rode detect-repeats.py e corte antes de animar" if man["repeticoes"] else ""))
+    lg = man.get("legendas") or {}
+    if lg.get("caminho"):
+        try:
+            n = json.loads(Path(lg["caminho"]).read_text(encoding="utf-8"))
+            print(f"legendas   {len(n)} palavras · {sum(1 for x in n if x.get('kw'))} no acento")
+        except Exception:
+            print(f"legendas   {lg['caminho']}")
+    elif lg.get("erro"):
+        print(f"  ERRO legendas: {lg['erro']}")
+    elif lg.get("pulado"):
+        print(f"legendas   pulado ({lg.get('motivo')})")
+
     ok = sum(1 for i in man["imagens"] if i.get("caminho"))
     ruim = [i for i in man["imagens"] if i.get("erro")]
     print(f"imagens    {ok}/{len(man['imagens'])} em {imgdir}")

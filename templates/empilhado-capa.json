@@ -30,7 +30,16 @@
       "y": 704,
       "altura": 608,
       "fonte": "avatar",
-      "audio": true
+      "audio": true,
+      "legenda": {
+        "fonte": "Montserrat Black, Inter, system-ui, sans-serif",
+        "fonte_arquivo": "~/.local/share/fonts/Montserrat-Black.ttf",
+        "tamanho": 86,
+        "peso": 900,
+        "contorno": "#000000",
+        "contorno_px": 8,
+        "respiro": 28
+      }
     },
     "base": {
       "y": 1312,

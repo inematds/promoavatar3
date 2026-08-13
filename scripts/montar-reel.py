@@ -117,6 +117,9 @@ def main() -> int:
                     help="templates/mapa.json do domínio (repassado ao preparar.py)")
     ap.add_argument("--cta", default=str(REPO / "cta" / "cta-9x16.mp4"))
     ap.add_argument("--sem-cta", action="store_true")
+    ap.add_argument("--sem-legenda", action="store_true",
+                    help="legenda palavra a palavra e LIGADA por default "
+                         "(docs/legenda.md); isto desliga")
     ap.add_argument("--pular-preparo", action="store_true",
                     help="ja existe index.html e voce so quer render/QC")
     ap.add_argument("--saida", default=None,
@@ -149,6 +152,8 @@ def main() -> int:
             cmd += ["--flow", os.path.expanduser(a.flow)]
         if a.mapa:
             cmd += ["--mapa", os.path.expanduser(a.mapa)]
+        if a.sem_legenda:
+            cmd += ["--sem-legenda"]
         r = sh(cmd)
         print(r.stdout.rstrip() or r.stderr.rstrip())
         if r.returncode != 0:

@@ -99,8 +99,17 @@ antes de gastar. Para a esteira inteira sem parar, some `| sem-portao`.
 Confira antes com `| sombra`: a fase de avatar só aparece no plano quando a
 opção dela está ligada.
 
-## `| legenda` não vale mais aqui
+## Legenda: LIGADA por default
 
-A fase de reel é uma função, e o `montar-reel.py` não legenda — a legenda vem
-queimada do estúdio quando você a liga lá. Pedir `| legenda` é **recusado na
-criação**, em vez de entregar reel sem legenda dizendo que legendou.
+Desde 2026-08-13 o motor deste repo legenda, com o mesmo desenho do promoavatar:
+**uma palavra por vez**, caixa alta, branca com contorno preto grosso, âmbar só
+na palavra-chave, colada na base da faixa do avatar. As palavras-chave saem das
+`## SOBREPOSIÇÕES` do texto do público; sem elas, a legenda fica toda branca —
+resultado válido, não falha.
+
+**Cuidado com legenda DUPLA:** a do estúdio vem queimada no MP4 do avatar e não
+tem remoção. Se você gravar com legenda lá E o reel legendar aqui, saem duas.
+Escolher uma é desligar a outra — e desligar a do estúdio é no `TEMPLATE-AVATAR`
+do HeyGen, não aqui.
+
+Detalhes de cor, corpo e posição: `docs/legenda.md`.
