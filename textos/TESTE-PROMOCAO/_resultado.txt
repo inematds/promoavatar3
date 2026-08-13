@@ -1,0 +1,5 @@
+pessoa-comum-alc: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-PROMOCAO/pessoa-comum-alc.md
+pessoa-comum-aut: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-PROMOCAO/pessoa-comum-aut.md
+pessoa-comum-pro: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-PROMOCAO/pessoa-comum-pro.md
+resumo: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-PROMOCAO/resumo-estrategico.md
+RESULT: /home/nmaldaner/projetos/promoavatar3/textos/TESTE-PROMOCAO/_resultado.txt
