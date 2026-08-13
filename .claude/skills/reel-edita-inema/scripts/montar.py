@@ -33,7 +33,7 @@ Uso:
   - `{...}` no hook marca a palavra-chave (sai no acento).
   - um segmento por imagem do manifesto, na ordem.
 """
-import argparse, html, json, os, sys
+import argparse, html, json, os, shutil, sys
 from pathlib import Path
 
 
@@ -104,6 +104,9 @@ def main() -> int:
                          "e gravou no manifesto (campo `template`)")
     ap.add_argument("--manifesto", required=True)
     ap.add_argument("--segmentos", required=True)
+    ap.add_argument("--legendas", default=None,
+                    help="opcional: legendas.json (legendas.py). Sem ele, reel "
+                         "sem legenda — ver docs/legenda.md")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
 
@@ -222,6 +225,56 @@ def main() -> int:
       #meio .edge{{position:absolute;inset:0;z-index:2;pointer-events:none;
         box-shadow:inset 0 8px 18px rgba(0,0,0,.35),inset 0 -8px 18px rgba(0,0,0,.35)}}
 """
+    # ---------- legenda ----------
+    # Uma palavra por vez, ancorada na BASE da faixa do avatar (o terco
+    # inferior do quadro e o painel `#base`, nao sobra para legenda).
+    # Cada palavra e um elemento proprio que acende e apaga: um elemento so,
+    # trocando de texto por `tl.call`, nao sobrevive ao render por seek do
+    # Hyperframes.
+    lg = meio.get("legenda", {})
+    legs = carregar(a.legendas, "legendas") if a.legendas else []
+    if legs and not isinstance(legs, list):
+        erro("legendas.json precisa ser uma lista — rode scripts/legendas.py")
+    if legs and pip:
+        # No PiP o avatar e um selo de 468x264 sobre a imagem; legenda ali
+        # sairia ilegivel e taparia o proprio rosto.
+        print("aviso: template com avatar em PiP — legenda ignorada")
+        legs = []
+
+    # A fonte da legenda precisa viajar junto: o renderer so resolve sozinho um
+    # punhado de familias, e as demais caem calado numa generica
+    # (`font_family_without_font_face` no lint). Copiar para dentro de motion/ e
+    # declarar @font-face e o que faz o render sair com a tipografia aprovada.
+    face_legenda = ""
+    if legs and lg.get("fonte_arquivo"):
+        orig = Path(os.path.expanduser(lg["fonte_arquivo"]))
+        if not orig.exists():
+            erro(f"fonte da legenda nao encontrada: {orig}\n"
+                 f"       Ajuste `faixas.meio.legenda.fonte_arquivo` no template.")
+        destino = saida.parent / "fonts" / orig.name
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(orig, destino)
+        familia = lg.get("fonte", "").split(",")[0].strip()
+        face_legenda = (f"""
+      @font-face{{font-family:'{familia}';src:url('{esc(rel(destino))}');
+        font-weight:{lg.get('peso',900)};font-style:normal}}
+""")
+
+    css_legenda = "" if not legs else face_legenda + f"""
+      #captions{{position:absolute;left:0;right:0;bottom:{lg.get('respiro',28)}px;
+        z-index:5;pointer-events:none;text-align:center}}
+      #captions .w{{position:absolute;left:24px;right:24px;bottom:0;opacity:0;
+        font-family:{lg.get('fonte','Inter,system-ui,sans-serif')};
+        font-size:{lg.get('tamanho',86)}px;font-weight:{lg.get('peso',900)};
+        line-height:1;color:var(--txt);
+        -webkit-text-stroke:{lg.get('contorno_px',8)}px {lg.get('contorno','#000')};
+        paint-order:stroke fill}}
+      #captions .w.kw{{color:var(--ac)}}
+"""
+    corpo_legenda = "" if not legs else "\n" + "\n".join(
+        f'        <div class="w{" kw" if p.get("kw") else ""}" id="cb{n}">{esc(p.get("palavra",""))}</div>'
+        for n, p in enumerate(legs, 1))
+
     css_base = "" if not tem_base else f"""
       #base{{position:absolute;top:{base.get('y',1312)}px;left:0;width:{W}px;
         height:{base.get('altura',608)}px;overflow:hidden;background:{cor.get('base_fundo','#05070a')};
@@ -254,7 +307,7 @@ def main() -> int:
         line-height:{hl.get('entrelinha',1.04)};color:var(--txt);
         text-shadow:0 4px 24px rgba(0,0,0,.65)}}
       #topo .headline .em{{color:var(--ac)}}
-{css_meio}{css_base}
+{css_meio}{css_legenda}{css_base}
       #flash{{position:absolute;inset:0;background:#fff;opacity:0;z-index:20;pointer-events:none}}
 """
 
@@ -282,6 +335,15 @@ def main() -> int:
             tl.append(f'      tl.to("#b{n-1}",{{opacity:0,y:-10,duration:0.22,ease:"power2.in"}},{t-0.08:.2f});')
             tl.append(f'      tl.fromTo("#b{n}",{{opacity:0,y:14}},'
                       f'{{opacity:1,y:0,duration:{D},ease:"power2.out"}},{t+0.25:.2f});')
+    # legenda: acende no `start` da palavra, apaga quando a proxima comeca.
+    # `set` (e nao `to`) de proposito: sem fade, a troca e seca e o render por
+    # seek acerta o quadro exato.
+    for n, p in enumerate(legs, 1):
+        ini = float(p.get("start", 0))
+        fim = ini + float(p.get("dur", 0))
+        tl.append(f'      tl.set("#cb{n}",{{opacity:1}},{ini:.3f});')
+        tl.append(f'      tl.set("#cb{n}",{{opacity:0}},{fim:.3f});')
+
     # pulsos: nenhum beat acima do teto (regra dos <=4s), calculado, nao chutado
     teto = float(tr.get("pulso_max_s", 3.6))
     marcos = [float(s.get("inicio", 0)) for s in segs] + [dur]
@@ -316,6 +378,7 @@ def main() -> int:
         <video id="avatarvid" class="clip" src="{esc(rel(avatar))}" muted playsinline
                data-start="0" data-duration="{dur}" data-track-index="0"></video>
 {'' if pip else '        <div class="edge"></div>'}
+{'' if not legs else f'        <div id="captions">{corpo_legenda}{chr(10)}        </div>'}
       </div>
       <audio id="avataraudio" src="{esc(rel(avatar))}" data-start="0" data-duration="{dur}"
              data-track-index="2" data-volume="1"></audio>

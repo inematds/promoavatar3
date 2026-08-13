@@ -16,7 +16,11 @@ O que faz, nesta ordem:
   5. GERA AS IMAGENS DA SECAO `## IMAGENS` do arquivo de texto do publico —
      uma por segmento, com --seed-key "<alvo>#<N>" e 1088x704 (a faixa do topo);
   6. escreve `manifesto.json` com tudo, para o agente NAO precisar sair
-     procurando arquivo com ls/grep (isso era outro cluster grande de chamadas).
+     procurando arquivo com ls/grep (isso era outro cluster grande de chamadas);
+  7. CHAMA o montar.py e entrega `motion/index.html` pronto. `--flow`/`--mapa`
+     tem default no proprio repo deste script, entao o template e resolvido
+     mesmo que ninguem passe nada. Sem isso restava um caminho alternativo
+     (escrever HTML a mao) e o agente pegava esse caminho em 3 de 5 reels.
 
 O passo 5 e o que fecha a Etapa 3: a fase de texto decide as imagens, e aqui
 elas sao geradas MECANICAMENTE. Medido no A#19: o agente do reel ignorou a
@@ -26,6 +30,7 @@ Uso:
   python3 preparar.py --avatar edicion/avatar.mp4 --ws ~/projetos/output/reels/x \\
       --alvo jovens --textos ~/projetos/promoavatar/textos/A19/jovens.md
   [--explicativo edicion/exp.mp4] [--sem-imagens] [--sem-transcricao]
+  [--sem-montar] [--flow ... --mapa ... --template ...  (so para override)]
 """
 import argparse, json, os, re, subprocess, sys, shutil
 from pathlib import Path
@@ -75,7 +80,11 @@ def _limpa(p: str) -> str:
     return _re.sub(r"[^a-z0-9]", "", p)
 
 
-def tempos_dos_segmentos(transcript: dict, imagens: list) -> list:
+MIN_CARD = 1.5   # segundos que um card do topo precisa ficar no ar
+
+
+def tempos_dos_segmentos(transcript: dict, imagens: list,
+                         duracao: float = 0.0) -> list:
     """Em que segundo a fala chega ao trecho citado por cada imagem.
 
     Isto NAO e trabalho de LLM. Medido em 2026-08-04, na mesma tarefa: um
@@ -124,10 +133,38 @@ def tempos_dos_segmentos(transcript: dict, imagens: list) -> list:
                          if achados[j][0] is not None), None)
             t = round((ultimo + prox) / 2, 2) if prox is not None else ultimo + 2.0
             origem = "interpolado"
-        t = max(t, ultimo + 0.05) if k else t
+        # Separacao MINIMA de verdade, nao 0,05s.
+        #
+        # O piso antigo existia so para forcar ordem crescente, e produzia
+        # cards de 50 ms: no A#25/pessoa-comum as imagens 7 e 8 sairam em
+        # 33,78s e 33,83s, e o `qc-frames.py` reprovou o reel — corretamente,
+        # porque duas imagens a 50 ms uma da outra nao sao uma troca, sao um
+        # piscar. Um card precisa ficar no ar tempo de ser visto.
+        if k:
+            t = max(t, ultimo + MIN_CARD)
         achados[k] = (round(t, 2), origem)
         ultimo = achados[k][0]
+
+    # Empurrar em cascata pode jogar o ultimo card para fora do video. Se isso
+    # acontecer, comprime de tras para frente respeitando o MIN_CARD — assim o
+    # fim continua dentro do quadro e a ordem se mantem. O primeiro card fica
+    # cravado em 0 (regra do cold-open), entao a compressao para nele.
+    limite = (duracao - MIN_CARD) if duracao else None
+    if limite and achados and achados[-1][0] > limite:
+        for k in range(len(achados) - 1, 0, -1):
+            t, origem = achados[k]
+            teto = limite - MIN_CARD * (len(achados) - 1 - k)
+            if t > teto:
+                achados[k] = (round(max(0.0, teto), 2), f"{origem} (comprimido)")
     return achados
+
+
+def ler_json_seguro(p) -> dict:
+    """JSON de um caminho que pode nao existir — devolve {} em vez de explodir."""
+    try:
+        return json.loads(Path(os.path.expanduser(p)).read_text(encoding="utf-8"))
+    except Exception:
+        return {}
 
 
 def ler_imagens(md: Path) -> list:
@@ -140,7 +177,12 @@ def ler_imagens(md: Path) -> list:
     if not md or not md.exists():
         return []
     txt = md.read_text(encoding="utf-8", errors="replace")
-    m = re.search(r"^##\s*IMAGENS\s*$(.*?)(?=^##\s|\Z)", txt, re.M | re.S)
+    # `#{1,3}` e nao `##`: em 2026-08-08 os 48 textos de A#49 a A#52 sairam com
+    # `### IMAGENS`, e TODOS os reels dos quatro fluxos morreram com "sem
+    # segmentos.json". O transcript estava la — faltava o parser aceitar tres
+    # `#`. Como o texto e escrito por LLM, o nivel do cabecalho volta a variar:
+    # quem se adapta e o parser, nao os arquivos.
+    m = re.search(r"^#{1,3}\s*IMAGENS\s*$(.*?)(?=^#{1,3}\s|\Z)", txt, re.M | re.S)
     if not m:
         return []
     itens, atual = [], None
@@ -181,12 +223,31 @@ def main() -> int:
     ap.add_argument("--explicativo", default=None)
     ap.add_argument("--sem-imagens", action="store_true")
     ap.add_argument("--sem-transcricao", action="store_true")
+    ap.add_argument("--sem-legenda", action="store_true",
+                    help="legenda e LIGADA por default (docs/legenda.md); "
+                         "isto desliga")
     ap.add_argument("--flow", default=None,
-                    help="flow.json do projeto — de onde saem o template do alvo e o padrao")
+                    help="flow.json do projeto — de onde saem o template do alvo e o padrao. "
+                         "Omitido: usa o do repo deste script, se existir.")
     ap.add_argument("--mapa", default=None,
-                    help="templates/mapa.json — formato editorial -> layout")
+                    help="templates/mapa.json — formato editorial -> layout. "
+                         "Omitido: usa o do repo deste script, se existir.")
     ap.add_argument("--template", default=None, help="override do operador")
+    ap.add_argument("--sem-montar", action="store_true",
+                    help="para no manifesto, sem gerar o index.html")
     a = ap.parse_args()
+
+    # `--flow`/`--mapa` eram opcionais e o flow.json PEDIA que o agente os
+    # passasse — no A#22 nenhum dos 5 reels passou, e sem eles o template nao e
+    # resolvido e o agente volta a escolher (ou a escrever HTML na mao). Pedir
+    # nao e portao: o caminho dos dois sai do proprio __file__.
+    REPO = AQUI.parent
+    if not a.flow and (REPO / "flow.json").exists():
+        a.flow = str(REPO / "flow.json")
+    if not a.mapa:
+        _dir = (ler_json_seguro(a.flow).get("templates_dir") or "templates") if a.flow else "templates"
+        if (REPO / _dir / "mapa.json").exists():
+            a.mapa = str(REPO / _dir / "mapa.json")
 
     ws = Path(os.path.expanduser(a.ws))
     edicion, motion, imgdir = ws / "edicion", ws / "motion", ws / "motion" / "img"
@@ -265,12 +326,7 @@ def main() -> int:
                 formato = m.group(1).strip()
     man["formato"] = formato
 
-    def ler_json(p):
-        try:
-            return json.loads(Path(os.path.expanduser(p)).read_text(encoding="utf-8"))
-        except Exception:
-            return {}
-
+    ler_json = ler_json_seguro
     flow = ler_json(a.flow) if a.flow else {}
     mapa = (ler_json(a.mapa) if a.mapa else {}).get("mapa", {})
     do_alvo = ((flow.get("alvos") or {}).get(a.alvo) or {}).get("template")
@@ -294,6 +350,10 @@ def main() -> int:
         if a.flow:
             raiz = Path(os.path.expanduser(a.flow)).parent
             cands.append(raiz / (flow.get("templates_dir") or "templates") / f"{escolha}.json")
+        # Fallback para o repo do MOTOR: um dominio que usa os scripts daqui
+        # (`motor_repo` no flow.json dele) herda os layouts sem manter copia.
+        # O do dominio VENCE — quem quiser layout proprio e so criar o arquivo.
+        cands.append(REPO / (flow.get("templates_dir") or "templates") / f"{escolha}.json")
         achado = next((c for c in cands if c.exists()), None)
         man["template_arquivo"] = str(achado) if achado else None
         if not achado:
@@ -390,7 +450,8 @@ def main() -> int:
             tr = json.loads(transcript.read_text(encoding="utf-8"))
         except Exception:
             tr = {}
-        tempos = tempos_dos_segmentos(tr, man["imagens"])
+        tempos = tempos_dos_segmentos(tr, man["imagens"],
+                                      man["avatar"].get("duracao") or 0.0)
         segs, faltando = [], []
         for it, (t, origem) in zip(man["imagens"], tempos):
             it["inicio"] = t
@@ -409,8 +470,65 @@ def main() -> int:
                 f"escrever `headline:` em cada uma (regra 11b). Complete o "
                 f"segmentos.json antes de montar.")
 
-    (ws / "manifesto.json").write_text(json.dumps(man, ensure_ascii=False, indent=2),
-                                       encoding="utf-8")
+    # O manifesto e escrito ANTES de montar porque o montar.py o le do disco —
+    # ele e reescrito logo abaixo com o resultado do HTML.
+    def grava_manifesto():
+        (ws / "manifesto.json").write_text(json.dumps(man, ensure_ascii=False, indent=2),
+                                           encoding="utf-8")
+    grava_manifesto()
+
+    # ---- monta o index.html na mesma chamada ----
+    #
+    # Usar o montar.py era CONSELHO no `entrega` do flow.json, e conselho perde:
+    # no A#22 ele foi usado em 2 de 5 reels — nos outros 3 o agente escreveu o
+    # HTML a mao, que e de onde vinham o loop de lint e o `top:1372px-1312px`.
+    # Aqui nao ha mais caminho alternativo: quem prepara, monta.
+    if a.sem_montar:
+        man["html"] = {"pulado": True}
+    elif not man.get("segmentos"):
+        man["html"] = {"erro": "sem segmentos.json (faltou transcript ou secao IMAGENS)"}
+    elif not any((i.get("headline") or "").strip() for i in man.get("imagens", [])):
+        # Visto no primeiro teste do encadeamento: com um .md antigo (sem as
+        # linhas `headline:` da 11b) o montar.py gerava um index.html com TODAS
+        # as manchetes vazias e o preparar.py saia 0. Reel mudo de texto passando
+        # por pronto e pior do que falhar aqui.
+        man["html"] = {"erro": "nenhuma imagem tem `headline:` — o texto do publico "
+                               "e antigo (regra 11b). Complete o segmentos.json e rode "
+                               "o montar.py, ou refaca a fase de texto."}
+    elif not man.get("template_arquivo"):
+        man["html"] = {"erro": f"template nao resolvido: {man.get('template_aviso') or 'sem flow.json/mapa.json'}"}
+    else:
+        # ---- legenda (ligada por default) ----
+        # Depende do transcript, que ja saiu do Groq com tempo por palavra.
+        # Sem transcript nao ha o que legendar: avisa e segue sem legenda, em
+        # vez de derrubar o reel inteiro. Ver docs/legenda.md.
+        leg_arq = None
+        if not a.sem_legenda and transcript.exists() and transcript.stat().st_size > 0:
+            leg_arq = edicion / "legendas.json"
+            cmd = [sys.executable, str(AQUI / "legendas.py"),
+                   "--transcript", str(transcript), "--out", str(leg_arq)]
+            if a.textos:
+                cmd += ["--md", a.textos]
+            r = sh(cmd)
+            if r.returncode != 0 or not leg_arq.exists():
+                man["legendas"] = {"erro": (r.stderr or r.stdout).strip()[:200]}
+                leg_arq = None
+            else:
+                man["legendas"] = {"caminho": str(leg_arq)}
+        else:
+            man["legendas"] = {"pulado": True,
+                               "motivo": "--sem-legenda" if a.sem_legenda
+                                         else "sem transcript"}
+
+        saida = motion / "index.html"
+        r = sh([sys.executable, str(AQUI / "montar.py"),
+                "--manifesto", str(ws / "manifesto.json"),
+                "--segmentos", man["segmentos"], "--out", str(saida)]
+               + (["--legendas", str(leg_arq)] if leg_arq else []))
+        man["html"] = ({"caminho": str(saida)} if r.returncode == 0
+                       else {"erro": (r.stderr or r.stdout).strip()[:300]})
+
+    grava_manifesto()
 
     # ---- resumo COMPACTO (isto entra no contexto do agente; nao floode) ----
     av = man["avatar"]
@@ -426,6 +544,18 @@ def main() -> int:
     if man.get("repeticoes") is not None:
         print(f"repeticoes {man['repeticoes']}"
               + ("  <- rode detect-repeats.py e corte antes de animar" if man["repeticoes"] else ""))
+    lg = man.get("legendas") or {}
+    if lg.get("caminho"):
+        try:
+            n = json.loads(Path(lg["caminho"]).read_text(encoding="utf-8"))
+            print(f"legendas   {len(n)} palavras · {sum(1 for x in n if x.get('kw'))} no acento")
+        except Exception:
+            print(f"legendas   {lg['caminho']}")
+    elif lg.get("erro"):
+        print(f"  ERRO legendas: {lg['erro']}")
+    elif lg.get("pulado"):
+        print(f"legendas   pulado ({lg.get('motivo')})")
+
     ok = sum(1 for i in man["imagens"] if i.get("caminho"))
     ruim = [i for i in man["imagens"] if i.get("erro")]
     print(f"imagens    {ok}/{len(man['imagens'])} em {imgdir}")
@@ -443,7 +573,18 @@ def main() -> int:
         print(f"template   {man['template']}   <- {man['template_origem']}")
     if man.get("template_aviso"):
         print(f"  AVISO: {man['template_aviso']}")
+    h = man.get("html") or {}
+    if h.get("caminho"):
+        print(f"html       {h['caminho']}")
+    elif h.get("pulado"):
+        print("html       pulado (--sem-montar)")
+    else:
+        print(f"  ERRO html: {h.get('erro')}")
     print(f"manifesto  {ws/'manifesto.json'}")
+    # Falha alto se o HTML nao saiu: e o produto da chamada. Sair 0 com o
+    # index.html faltando e o convite para o agente escrever um a mao.
+    if h.get("erro"):
+        return 3
     return 1 if ruim else 0
 
 
