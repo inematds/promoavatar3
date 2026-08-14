@@ -94,7 +94,9 @@ fazer compartilhar. Marca, curso e CTA comercial NÃO são o assunto deste víde
 
 - **Formato livre.** Nenhuma estrutura obrigatória. Pode ser uma frase só
   repetida, uma contagem, uma confissão, uma cena, uma pergunta que o vídeo
-  inteiro não responde.
+  inteiro não responde. (A CONFISSÃO é a exceção que precisa de cuidado: só
+  confesse o que veio no assunto — pôr na sua boca um erro que você não cometeu
+  é testemunho inventado, ver a regra da pessoa concreta.)
 - **Tom livre.** Pode ser duro, seco, irônico, incômodo. Pode acusar um
   comportamento (nunca uma pessoa ou um grupo identificável).
 - **Sem marca, sem curso, sem inema.club NA FALA.** O CTA é de ENGAJAMENTO —
@@ -345,6 +347,21 @@ que abriu o caderno do filho). Plural genérico ("os profissionais precisam se
 atualizar") não gera identificação — e identificação é o que faz marcar alguém
 nos comentários. Use a coluna Dor da tabela da skill como matéria-prima.
 
+**A pessoa concreta é uma CENA, não um depoimento.** Nunca a escreva em
+primeira pessoa como algo que você presenciou ("semana passada eu vi", "um
+aluno meu me contou"), nem ponha fala dela entre aspas como citação. Isso é
+testemunho — e testemunho inventado é prova social falsa, pior que número
+inventado, porque a força do argumento passa a vir de um fato que não existe.
+Aqui a regra pesa MAIS, não menos: alcance construído sobre um episódio que
+nunca houve é o engano que a fronteira desta variante proíbe. Se o episódio
+veio LITERALMENTE no assunto, aí ele é seu e você conta como aconteceu.
+
+Escreva a cena em segunda pessoa ("você tem 52 anos e vinte e sete de estrada")
+ou como hipótese no presente ("imagina esse cara diante da tela"). A segunda
+pessoa ainda identifica melhor, que é o objetivo desta regra. Idade, tempo de
+casa e detalhe da cena são DA CENA: não são os números que a regra 9 proíbe,
+desde que ninguém os apresente como fato verificado sobre o mundo.
+
 **16. A última frase decide o compartilhamento.** Ela reconecta com o gancho e
 entrega algo que a pessoa consegue REPETIR — uma regra, um princípio, uma
 virada. O CTA é a ordem, não o fecho: o fecho é a ideia que a pessoa leva. Sem
@@ -368,7 +385,9 @@ de forma simples.
 - A primeira frase não menciona curso, produto nem comunidade.
 - Não ensine tudo: uma ideia só.
 - CTA de comentário, compartilhamento ou continuação. **CTA comercial não entra.**
-- Pelo menos um elemento concreto (exemplo, comparação, situação real).
+- Pelo menos um elemento concreto (exemplo, comparação, cena reconhecível).
+  "Concreto" é o que o público reconhece como a vida dele — NÃO um episódio
+  que você afirma ter acontecido. Ver a regra 15: cena, não depoimento.
 - A conclusão tem que RECOMPENSAR o gancho.
 
 Critério antes de gravar: *uma pessoa que não conhece a marca assistiria e
@@ -383,6 +402,10 @@ Escolha UM formato e diga qual: explicação prática · demonstração · compa
 técnica · passo a passo curto · desmontagem de um erro · conceito explicado ·
 bastidor de sistema · análise de ferramenta · estudo de caso · causa e
 consequência.
+
+**Estudo de caso e bastidor só valem com material do ASSUNTO.** Se o caso não
+veio de lá, não invente um: escolha outro formato da lista. Caso inventado é
+prova falsa, e é o que a regra 9 proíbe — não vira permitido por ser útil.
 
 - Comece por algo que o público acha que entende, mas entende pela metade.
 - Toda afirmação forte anda junto de uma prova ou de uma explicação.
