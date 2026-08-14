@@ -400,6 +400,10 @@ DIREÇÃO: ligar a dor ao primeiro passo, nomeado, do tamanho de hoje.
 - CTA de ENGAJAMENTO — o compromisso público ("escreve nos comentários o que
   você vai fazer esta semana") é o que mais combina com este tipo.
 
+O `fecho` que chega nos dados do alvo diz "PROMOCIONAL — use o CTA comercial
+completo". Esse texto é do fluxo padrão e **não vale nesta variante**: ele é o
+mesmo para as três, e aqui a regra do topo vence. Ignore-o no `-pro`.
+
 Critério antes de gravar: *a pessoa sabe o que fazer HOJE ao terminar o vídeo,
 sem precisar comprar nada?* Se não, reescreva.
 
