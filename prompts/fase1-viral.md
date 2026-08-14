@@ -130,7 +130,9 @@ mandaria isto para alguém?** Se a resposta é "acharia interessante", não é v
 **O gancho é o vídeo.** Escreva CINCO primeiras frases diferentes antes de
 escolher. Anote as cinco no resumo, com uma linha dizendo por que a escolhida
 venceu. A primeira frase não pode ser saudação, contexto, "você já pensou" nem
-"você sabia".
+"você sabia". Aplique o teste da lacuna: depois de ouvir a frase, a pessoa
+PRECISA da próxima para fechar o sentido? Frase que se basta é afirmação, não
+gancho. **Máximo de 9 palavras na primeira frase.**
 
 ### Os três eixos desta variante (é aqui que ela se ganha ou se perde)
 

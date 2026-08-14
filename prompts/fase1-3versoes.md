@@ -107,6 +107,27 @@ texto — e discordar ANTES de 3 avatares serem gerados na mão.
 Isso NÃO afrouxa as regras 9 e 10: dá para defender uma posição sem inventar
 data, número, preço, vaga ou urgência. Opinião é permitida; fato inventado, não.
 
+## OFICINA DE GANCHO (obrigatória, por alvo, antes de escrever a fala)
+
+Para cada alvo, escreva **cinco** primeiras frases diferentes. Não uma. Cinco.
+Depois mate quatro e registre no arquivo do alvo (linha `Ganchos descartados:`)
+por que cada uma perdeu, em poucas palavras.
+
+**O teste da lacuna** — o único critério que decide: depois de ouvir a frase, a
+pessoa PRECISA da próxima para fechar o sentido? Se a frase já se basta, é
+afirmação, não gancho. "Sua experiência vale mais com IA" fecha em si — morre.
+"Aos 55 ele fez em duas horas o que a agência cobrava três mil" não fecha —
+vive.
+
+Tipos que passam no teste: número específico e estranho · contradição ("o mais
+experiente é quem mais apanha") · custo ("você está pagando por algo que já
+tem") · a ordem direta ("pare de X") · a confissão ("eu errei isso por dois
+anos") · o nome inesperado · o prazo curto e concreto (só se vier do assunto —
+regra 10 continua valendo).
+
+**Máximo de 9 palavras na primeira frase.** Se não coube, não é gancho, é
+introdução.
+
 ## REGRAS DE ESCRITA (valem para os três tipos, acima da fórmula da skill)
 
 O texto tem que VENDER O QUE MUDA NA VIDA DA PESSOA — não explicar como o
@@ -307,8 +328,9 @@ Se não, reescreva.
    exatamente o nome do alvo no pipeline (`jovens-alc`, `mulheres-pro`,
    `40mais-aut`…), em minúsculas, sem acento e COM o sufixo.
 4. Cada arquivo tem as seções FALA / SOBREPOSIÇÕES / IMAGENS / ESTRUTURA
-   exatamente como a skill manda, mais uma linha `Tipo:` e uma linha
-   `Formato escolhido:` no topo. `IMAGENS` é a da regra 11b e vem logo depois de
+   exatamente como a skill manda, mais uma linha `Tipo:`, uma linha
+   `Formato escolhido:` e uma linha `Ganchos descartados:` (os 4 que perderam
+   na OFICINA, com o porquê em poucas palavras) no topo. `IMAGENS` é a da regra 11b e vem logo depois de
    SOBREPOSIÇÕES — **o motor do reel falha (exit 3) sem ela**. A seção falada começa com `### FALA` — é ela que vai para o HeyGen, e o
    bot a lê deste arquivo para mandar no chat.
    Antes de gravar, releia a FALA contra as REGRAS DE ESCRITA e responda a si
