@@ -9,9 +9,11 @@ EXATAMENTE para estes alvos e mais nenhum:
 
 Cada alvo é `<publico>-<tipo>`. O sufixo diz QUAL DOS TRÊS VÍDEOS é:
 
-- `-alc` → **alcance** (25–40s): interrompe a rolagem, gera compartilhamento.
-- `-aut` → **autoridade** (35–60s): ensina algo concreto, gera salvamento.
-- `-pro` → **promocional** (30–45s): liga dor a solução, termina em CTA.
+- `-alc` → **alcance**: interrompe a rolagem, gera compartilhamento.
+- `-aut` → **autoridade**: ensina algo concreto, gera salvamento.
+- `-pro` → **direção**: liga a dor ao primeiro passo (adaptado nesta variante).
+
+Duração nesta variante: LIVRE entre 15 e 45s, para os três tipos.
 
 Um alvo = um arquivo = um vídeo = UMA fala. Nunca três versões dentro de um
 arquivo: o portão de revisão lê a PRIMEIRA seção `### FALA` do arquivo e manda
@@ -172,8 +174,10 @@ Pergunta educada no fim ("o que você acha?") é o mesmo que nenhum engajamento.
 Aqui a pessoa não pode sair neutra. Use UM destes, e construa o vídeo INTEIRO
 para chegar nele:
 
-- **escolha binária com lado declarado** — "responde 1 ou 2, e não vale ficar em
-  cima do muro";
+- **escolha binária com lado declarado** — "responde 1 ou 2, e não vale ficar
+  em cima do muro". A FALA tem que dizer O QUE É o 1 e O QUE É o 2, com as duas
+  opções numeradas literalmente na locução — "responde 1 ou 2" sem as opções
+  nomeadas na fala não obriga ninguém a nada;
 - **auto-classificação** — "comenta em qual dos dois você está hoje";
 - **confronto amistoso** — "se você discorda, escreve o porquê, eu quero ler";
 - **marcação com motivo** — "marca a pessoa que você sabe que está adiando";
@@ -213,21 +217,21 @@ reconhece como sua no primeiro segundo.
 construtor de agentes de IA, especialista em automação, arquiteto de sistemas
 com IA. O mesmo vale para "uma área que quase ninguém domina" — diga qual área.
 
-**4. Benefício antes de mecânica.** Antes de "Telegram → filas → agentes", diga
+**4. Benefício antes de mecânica.** *(NÃO SE APLICA nesta variante — regra de venda, liberada em "ESTA VARIANTE É VIRAL".)* Antes de "Telegram → filas → agentes", diga
 o que isso PRODUZ: vídeos, textos, pesquisas, atendimento — rodando sozinho.
 Jargão técnico cedo demais afasta iniciante.
 
 **5. Frases curtas, ritmo de locução.** Isto é falado, não lido. Frase longa com
 muitas informações emendadas não tem pausa e cansa. Quebre.
 
-**6. Promessa do tamanho certo.** Em 5 dias a pessoa constrói a PRIMEIRA VERSÃO
+**6. Promessa do tamanho certo.** *(NÃO SE APLICA nesta variante — regra de venda, liberada em "ESTA VARIANTE É VIRAL".)* Em 5 dias a pessoa constrói a PRIMEIRA VERSÃO
 FUNCIONAL de um sistema — não "um sistema completo". Prometer demais entrega de
 menos.
 
-**7. Diferencie sem atacar.** "Não é brincar de chatbot" soa como crítica
+**7. Diferencie sem atacar.** *(NÃO SE APLICA nesta variante — regra de venda, liberada em "ESTA VARIANTE É VIRAL".)* "Não é brincar de chatbot" soa como crítica
 gratuita. "Você vai ALÉM dos chatbots" diz a mesma coisa e soma.
 
-**8. CTA imperativo e curto.** "Procura a trilha" pede esforço. Use ordem
+**8. CTA imperativo e curto.** *(NÃO SE APLICA nesta variante — o CTA aqui é SEMPRE de engajamento, nunca comercial.)* "Procura a trilha" pede esforço. Use ordem
 direta: "Entre agora no inema.club e comece pela trilha de IA." UM CTA só.
 
 **9. NUNCA escreva rascunho nem placeholder.** Nada de "começa dia tal", "no dia
@@ -379,23 +383,20 @@ consequência.
 Critério antes de gravar: *a pessoa termina sabendo algo que não sabia?* Se não,
 reescreva.
 
-### `-pro` — promocional (30–45s)
+### `-pro` — direção (adaptado nesta variante)
 
-Liga uma dor específica deste público à solução. Pode vender; não pode virar
-lista de características.
+Aqui vale a regra do topo: **sem marca, sem curso, sem inema.club** — na
+variante viral até o `-pro` é de alcance. O que sobra do promocional é a
+DIREÇÃO: ligar a dor ao primeiro passo, nomeado, do tamanho de hoje.
 
-Escolha UMA abordagem e diga qual: problema e solução · oportunidade e caminho ·
-erro e correção · situação atual e transformação · consequência e prevenção ·
-desejo e próximo passo · tentar sozinho versus seguir um método.
-
-- Dor específica → consequência de não resolver → solução NOMEADA → benefício → CTA.
-- Benefício antes da mecânica.
+- Dor específica → consequência de não agir → PRIMEIRO PASSO nomeado (uma ação
+  concreta, não um produto).
 - Sem promessa de emprego, renda ou resultado garantido.
-- Sem "transforme sua vida" e afins.
-- UM CTA, para o destino que o assunto indicar (inema.club por padrão).
+- CTA de ENGAJAMENTO — o compromisso público ("escreve nos comentários o que
+  você vai fazer esta semana") é o que mais combina com este tipo.
 
-Critério antes de gravar: *fica claro por que esta solução é o próximo passo?*
-Se não, reescreva.
+Critério antes de gravar: *a pessoa sabe o que fazer HOJE ao terminar o vídeo,
+sem precisar comprar nada?* Se não, reescreva.
 
 ## O que fazer, de forma AUTÔNOMA, sem pedir confirmação
 
