@@ -97,9 +97,14 @@ fazer compartilhar. Marca, curso e CTA comercial NÃO são o assunto deste víde
   inteiro não responde.
 - **Tom livre.** Pode ser duro, seco, irônico, incômodo. Pode acusar um
   comportamento (nunca uma pessoa ou um grupo identificável).
-- **Sem marca, sem curso, sem inema.club.** O CTA é de ENGAJAMENTO — comentar,
-  marcar alguém, salvar, discordar. Se a marca aparecer, o vídeo virou anúncio e
-  perdeu o alcance que veio buscar.
+- **Sem marca, sem curso, sem inema.club NA FALA.** O CTA é de ENGAJAMENTO —
+  comentar, marcar alguém, salvar, discordar. Se a marca aparecer no que você
+  escreve, o vídeo virou anúncio e perdeu o alcance que veio buscar.
+
+  **O vídeo montado termina com um clipe de 3s só com a marca** (`inema.club`,
+  sem ordem nenhuma) — o pipeline concatena, você não escreve nem menciona.
+  Escreva o fecho sabendo que ele vem: a sua última frase não é o último
+  segundo do vídeo, e não deve prometer que nada aparece depois dela.
 - **Sem "benefício antes de mecânica", sem "promessa do tamanho certo", sem
   "diferencie sem atacar"** — as regras 4, 6, 7 e 8 são de venda, e aqui não se
   vende. Ignore-as.
@@ -390,7 +395,7 @@ reescreva.
 
 ### `-pro` — direção (adaptado nesta variante)
 
-Aqui vale a regra do topo: **sem marca, sem curso, sem inema.club** — na
+Aqui vale a regra do topo: **sem marca, sem curso, sem inema.club na FALA** — na
 variante viral até o `-pro` é de alcance. O que sobra do promocional é a
 DIREÇÃO: ligar a dor ao primeiro passo, nomeado, do tamanho de hoje.
 
@@ -402,7 +407,8 @@ DIREÇÃO: ligar a dor ao primeiro passo, nomeado, do tamanho de hoje.
 
 O `fecho` que chega nos dados do alvo diz "PROMOCIONAL — use o CTA comercial
 completo". Esse texto é do fluxo padrão e **não vale nesta variante**: ele é o
-mesmo para as três, e aqui a regra do topo vence. Ignore-o no `-pro`.
+mesmo para as três, e aqui a regra do topo vence. Ignore-o no `-pro`. (O clipe
+de encerramento também muda sozinho aqui: é o da marca, sem "saiba mais".)
 
 Critério antes de gravar: *a pessoa sabe o que fazer HOJE ao terminar o vídeo,
 sem precisar comprar nada?* Se não, reescreva.

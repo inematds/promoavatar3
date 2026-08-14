@@ -6,12 +6,12 @@
     "pessoa-comum-alc": {
       "canal": "lives2",
       "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "pessoa-comum-aut": {
       "canal": "lives2",
       "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "pessoa-comum-pro": {
       "canal": "lives2",
@@ -21,12 +21,12 @@
     "jovens-alc": {
       "canal": "lives22",
       "gatilho": "Você pode começar uma profissão que ainda está nascendo.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "jovens-aut": {
       "canal": "lives22",
       "gatilho": "Você pode começar uma profissão que ainda está nascendo.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "jovens-pro": {
       "canal": "lives22",
@@ -36,12 +36,12 @@
     "profissionais-alc": {
       "canal": "lives23",
       "gatilho": "Não abandone sua profissão. Aprenda a ampliá-la com IA.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "profissionais-aut": {
       "canal": "lives23",
       "gatilho": "Não abandone sua profissão. Aprenda a ampliá-la com IA.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "profissionais-pro": {
       "canal": "lives23",
@@ -51,12 +51,12 @@
     "mulheres-alc": {
       "canal": "lives4",
       "gatilho": "Use a IA para conquistar autonomia, produtividade e novas oportunidades.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "mulheres-aut": {
       "canal": "lives4",
       "gatilho": "Use a IA para conquistar autonomia, produtividade e novas oportunidades.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "mulheres-pro": {
       "canal": "lives4",
@@ -66,12 +66,12 @@
     "empreendedores-alc": {
       "canal": "lives1",
       "gatilho": "Transforme IA em redução de custos, vendas e novos negócios.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "empreendedores-aut": {
       "canal": "lives1",
       "gatilho": "Transforme IA em redução de custos, vendas e novos negócios.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "empreendedores-pro": {
       "canal": "lives1",
@@ -81,12 +81,12 @@
     "tecnicos-alc": {
       "canal": "lives6",
       "gatilho": "Pare de apenas testar ferramentas. Aprenda a construir sistemas e agentes.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "tecnicos-aut": {
       "canal": "lives6",
       "gatilho": "Pare de apenas testar ferramentas. Aprenda a construir sistemas e agentes.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "tecnicos-pro": {
       "canal": "lives6",
@@ -96,12 +96,12 @@
     "40mais-alc": {
       "canal": "lives7",
       "gatilho": "O mercado está tratando sua experiência como custo. A IA a transforma de novo em vantagem.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "40mais-aut": {
       "canal": "lives7",
       "gatilho": "O mercado está tratando sua experiência como custo. A IA a transforma de novo em vantagem.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "40mais-pro": {
       "canal": "lives7",
@@ -111,12 +111,12 @@
     "60mais-alc": {
       "canal": "lives8",
       "gatilho": "A IA pode transformar sua experiência de vida em conhecimento, renda e propósito.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "60mais-aut": {
       "canal": "lives8",
       "gatilho": "A IA pode transformar sua experiência de vida em conhecimento, renda e propósito.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "60mais-pro": {
       "canal": "lives8",
@@ -126,12 +126,12 @@
     "educadores-alc": {
       "canal": "lives9",
       "gatilho": "Você não vai ser substituído pela IA — mas pode ser o professor que ensina com ela.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "educadores-aut": {
       "canal": "lives9",
       "gatilho": "Você não vai ser substituído pela IA — mas pode ser o professor que ensina com ela.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "educadores-pro": {
       "canal": "lives9",
@@ -141,12 +141,12 @@
     "criadores-alc": {
       "canal": "lives11",
       "gatilho": "Pare de pagar ferramenta cara. Monte sua própria fábrica de conteúdo com IA.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "criadores-aut": {
       "canal": "lives11",
       "gatilho": "Pare de pagar ferramenta cara. Monte sua própria fábrica de conteúdo com IA.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "criadores-pro": {
       "canal": "lives11",
@@ -156,12 +156,12 @@
     "recolocacao-alc": {
       "canal": "lives3",
       "gatilho": "Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "recolocacao-aut": {
       "canal": "lives3",
       "gatilho": "Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "recolocacao-pro": {
       "canal": "lives3",
@@ -171,18 +171,22 @@
     "familia-alc": {
       "canal": "lives32",
       "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA.",
-      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial, NÃO cite o inema.club e NÃO concatene clipe de CTA."
+      "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "familia-aut": {
       "canal": "lives32",
       "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA.",
-      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve; NÃO concatene clipe de CTA."
+      "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "familia-pro": {
       "canal": "lives32",
       "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA.",
       "fecho": "PROMOCIONAL — este é o vídeo de conversão: use o CTA comercial completo."
     }
+  },
+  "cta": {
+    "padrao": "cta/cta-9x16.mp4",
+    "viral": "cta/marca-9x16.mp4"
   },
   "fases": [
     {

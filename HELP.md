@@ -59,8 +59,10 @@ mudam.
 A variante é escolhida na criação e fica CONGELADA no fluxo — um fluxo em
 andamento não muda de prompt no meio.
 
-Atenção: o clipe de CTA do fim do reel é concatenado sempre, inclusive no
-viral. Desligá-lo ainda não é opção do comando.
+O clipe de encerramento acompanha a variante: o padrão é o CTA ("SAIBA
+MAIS EM inema.club") e o viral leva um de 3s só com a marca, sem ordem
+nenhuma — assim ele não compete com o pedido de comentário, que é onde a
+variante viral ganha.
 
 
 FASES
