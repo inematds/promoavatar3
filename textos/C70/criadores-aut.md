@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: passo a passo curto + alívio negado
 
 ### FALA
-Você acha que "fábrica de conteúdo com IA" significa postar lixo em massa. É o contrário disso.
+Fábrica de conteúdo com IA? Parece lixo em massa. É o contrário disso.
 
 Imagina um criador com 3 mil seguidores, gravando sozinho, sem equipe, gastando o dobro do orçamento que devia numa ferramenta que quase não usa.
 

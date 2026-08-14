@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: desmontagem de erro + vergonha de já ter percebido e não ter feito nada
 
 ### FALA
-Currículo bom não é o que tem mais palavra bonita.
+Currículo bom não é o mais bonito.
 
 A maioria manda currículo achando que o problema é o design. Não é.
 

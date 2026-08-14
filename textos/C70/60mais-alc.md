@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: mito vs realidade + medo de tecnologia
 
 ### FALA
-Tem gente achando que IA é coisa de gente nova. É o contrário.
+Tem gente achando que IA é só pra jovem. É o contrário.
 Imagina sua avó, ou você mesmo daqui a pouco: 68 anos, uma vida inteira de histórias, ofício, causos, tudo isso guardado sem lugar pra ir.
 O mito é que IA é complicada, é pra jovem, é assunto de programador. A realidade é que ela foi feita pra conversar — você fala com ela como falaria com um neto paciente, sem pressa, sem julgamento.
 E o que você tem de mais valioso, essa vida inteira de experiência, é justamente o que a IA não tem. Ela sabe processar. Você sabe viver.

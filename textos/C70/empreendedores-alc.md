@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: previsão + medo de ficar pra trás
 
 ### FALA
-Daqui a 2 anos, alguém vai fazer o trabalho da sua agência sozinho.
+Daqui a 2 anos, sua agência pode sumir.
 Não é ameaça. É conta.
 Imagina o seu concorrente hoje: mesma verba, mas ele já usa IA pra rascunhar peça, testar ângulo, cortar vídeo.
 Você ainda espera 5 dias pela freela responder o WhatsApp.

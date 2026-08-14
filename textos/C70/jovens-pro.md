@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: consequência de não agir + pressão do primeiro trabalho
 
 ### FALA
-Imagina esse cara terminando o ensino médio agora, sem saber que profissão escolher.
+Imagina esse cara terminando o ensino médio sem rumo.
 Todo mundo em volta falando de faculdade tradicional, vaga concorrida, currículo que ninguém olha.
 A dor não é falta de talento. É medo de escolher uma área que pode nem existir daqui a 2 anos.
 Só que enquanto ele hesita, tem uma área nascendo agora — e ela ainda não tem fila.

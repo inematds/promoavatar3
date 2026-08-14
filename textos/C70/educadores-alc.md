@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: pergunta incômoda + medo de ficar pra trás
 
 ### FALA
-Daqui a 2 anos, o que você vai responder quando um aluno perguntar "professor, por que você não usa IA?"
+Daqui a 2 anos, um aluno vai te perguntar.
 
 Não é ficção. É amanhã de manhã, numa sala qualquer.
 

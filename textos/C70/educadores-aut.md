@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: desmontagem de erro + vergonha de já ter percebido e não ter feito nada
 
 ### FALA
-Você acha que "usar IA na aula" é deixar o aluno pedir resposta pronta. Não é. É o contrário.
+Você acha que "usar IA na aula" é isso? Não é. É o contrário.
 
 Imagina essa professora: 15 anos de sala, prova toda semana, corrigindo redação até meia-noite.
 

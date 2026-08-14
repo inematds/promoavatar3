@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: comparação + medo de ficar pra trás
 
 ### FALA
-Daqui a 2 anos, você pode se arrepender de não ter aprendido isso agora.
+Daqui a 2 anos, você pode se arrepender disso.
 Não, não é sobre faculdade nem sobre programar.
 É sobre aprender a pensar e trabalhar com IA antes que isso vire básico, tipo saber mexer no computador.
 Imagina esse cara: vinte anos, escolhendo profissão, com medo de entrar numa área que pode nem existir mais daqui a pouco.

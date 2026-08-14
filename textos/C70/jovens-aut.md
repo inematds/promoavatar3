@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: conceito explicado + injustiça
 
 ### FALA
-Você acha que precisa de experiência pra começar numa área boa. Isso valia antes.
+Você acha que precisa de experiência pra começar. Isso valia antes.
 Hoje existe um tipo de trabalho onde experiência de anos vale menos que uma coisa: começar cedo.
 Explica: quando uma área nasce agora, ninguém tem dez anos de bagagem nela. Ninguém.
 Então quem começa hoje, mesmo sem currículo, já está no mesmo ponto de largada que qualquer outro.

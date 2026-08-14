@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: consequência de não agir + medo de ficar pra trás
 
 ### FALA
-Imagina você daqui a 2 anos, tentando resolver algo simples, e todo mundo ao redor resolvendo em minutos com IA.
+Você, daqui a 2 anos, travado numa tarefa simples.
 E você ainda travado na primeira pergunta.
 A dor não é não saber IA. É continuar usando do jeito preguiçoso enquanto isso vira o básico de todo mundo.
 Aí quando perceber, o buraco vai estar maior do que parece hoje.

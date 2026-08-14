@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: conceito explicado + vergonha de já ter percebido e não ter feito nada
 
 ### FALA
-"Deixar meu filho brincar com IA" e "ensinar meu filho a pensar com IA" não são a mesma coisa.
+"Brincar com IA" e "pensar com IA" são diferentes.
 
 A maioria dos pais acha que já resolveu isso porque o filho usa IA pra fazer resumo de trabalho escolar. Isso é só metade.
 

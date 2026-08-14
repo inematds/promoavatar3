@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: consequência inesperada + medo de ficar pra trás
 
 ### FALA
-Daqui a 2 anos, alguém vai pegar sua vaga sem ser mais inteligente que você.
+Daqui a 2 anos, sua vaga pode sumir.
 Vai ser só mais rápido.
 Imagina o seguinte: dois currículos na mesa. O seu, com 20 anos de estrada. O de um cara de 26, com metade da experiência.
 Só que ele resolve em uma hora o que você resolve em um dia — porque ele pensa junto com uma IA, e você ainda pensa sozinho.

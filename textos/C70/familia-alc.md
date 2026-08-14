@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: mito vs realidade + medo de ficar pra trás
 
 ### FALA
-A escola do seu filho prepara ele pro mundo de ontem.
+A escola do seu filho está atrasada.
 
 Não é culpa da escola. É que o mundo muda mais rápido do que o currículo escolar consegue acompanhar.
 

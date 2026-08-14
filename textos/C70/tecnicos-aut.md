@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: passo a passo curto + injustiça
 
 ### FALA
-Você entende IA pela metade se só sabe usar prompt solto.
+Você entende IA pela metade se usa só prompt.
 Tem uma diferença entre "pedir uma coisa" e "montar um sistema que pede sozinho toda vez".
 Passo 1: pega uma tarefa que você repete toda semana — revisar PR, escrever changelog, o que for.
 Passo 2: em vez de digitar o pedido de novo cada vez, escreve esse pedido uma única vez, com o contexto fixo que nunca muda.

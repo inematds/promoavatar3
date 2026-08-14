@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: passo a passo curto + alívio negado
 
 ### FALA
-Você acha que voltar ao mercado depois de uma pausa significa começar do zero.
+Voltar ao mercado não é começar do zero.
 Não significa. Você só precisa de uma ponte, e a IA pode ser essa ponte.
 Passo um: pega seu currículo antigo e pede pra IA reescrever pro cargo que você quer hoje.
 Passo dois: descreve uma situação difícil que você viveu no trabalho antes da pausa.

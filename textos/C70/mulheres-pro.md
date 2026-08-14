@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: dor específica + consequência + compromisso público
 
 ### FALA
-Imagina você às 22h, filhos dormindo, a única hora do dia que é sua.
+Imagina você às 22h, filhos dormindo, hora só sua.
 E mesmo essa hora, você gasta se perguntando se ainda dá tempo de se atualizar.
 Essa dúvida sozinha já é um peso que você carrega todo santo dia.
 Se isso continuar do jeito que está, daqui a 2 anos a dúvida vira certeza: "eu devia ter começado".

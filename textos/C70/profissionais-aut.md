@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: desmontagem de erro + orgulho ferido auto-dirigido
 
 ### FALA
-Você acha que já entende de IA porque já usou uma vez.
+Você acha que já entende de IA.
 Isso é metade da história, e a metade errada.
 Usar IA uma vez é digitar uma pergunta e copiar a resposta.
 Trabalhar com IA é outra coisa: é dar contexto, corrigir e refinar de novo.

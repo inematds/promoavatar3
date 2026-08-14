@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: previsão + medo de ficar pra trás
 
 ### FALA
-Daqui a 2 anos, você pode se arrepender de não ter aprendido isso agora.
+Daqui a 2 anos, isso pode virar arrependimento.
 Calma, não é programação.
 É aprender a pensar e trabalhar com IA — antes que isso vire o novo básico, tipo saber usar internet.
 Repara numa coisa: você já usa IA. Mas usa do jeito preguiçoso. Pergunta rasa, aceita a primeira resposta, fecha a aba.

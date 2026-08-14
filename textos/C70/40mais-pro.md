@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: consequência de não agir + medo de ficar pra trás
 
 ### FALA
-Você tem 47 anos e acha que sua experiência ainda te protege. Ela protege. Por enquanto.
+Você tem 47 anos e acha que está protegido. Ela protege. Por enquanto.
 O mercado sempre tratou gente da sua idade como custo. Salário mais alto, "menos flexível", "mais devagar pra aprender coisa nova". Você já ouviu isso, direto ou indireto.
 Agora imagina daqui a 2 anos: todo mundo mais novo já pensa com IA no automático. E aí sua experiência sozinha não segura mais a cadeira.
 Mas junte as duas coisas — a sua experiência mais esse hábito novo de pensar com IA — e o jogo vira. Você passa de custo pra vantagem, porque agora entrega em uma hora o que levava um dia, com a bagagem que só você tem.

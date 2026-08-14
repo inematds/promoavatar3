@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: mito vs realidade + medo de virar commodity
 
 ### FALA
-Daqui a 2 anos, saber usar 10 ferramentas de IA não vai valer nada.
+Daqui a 2 anos, testar ferramenta não vai valer.
 Mito: quem testa mais ferramenta fica na frente.
 Realidade: quem constrói sistema com o que já tem fica na frente.
 Imagina esse cara: feed cheio de "ferramenta nova que substitui X", ele testa todas, no fim da semana não sobrou nada usável, só uma lista de abas abertas.

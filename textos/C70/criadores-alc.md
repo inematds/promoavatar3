@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: comparação + injustiça
 
 ### FALA
-Um canal com metade dos seus seguidores tá postando o dobro que você, e crescendo mais rápido.
+Um canal menor cresce mais rápido que o seu.
 
 Não é sorte. Não é algoritmo bonzinho com ele e ruim com você.
 

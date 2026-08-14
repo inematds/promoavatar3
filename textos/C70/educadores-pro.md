@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: consequência inesperada + orgulho ferido auto-dirigido
 
 ### FALA
-Tem professor que passa mais tempo brigando com aluno por causa de IA do que aprendendo a usar ela.
+Tem professor brigando com aluno por causa de IA.
 
 Pensa nessa cena: um coordenador chama o professor porque "meio da turma entregou trabalho igual, parece IA". E o professor vira fiscal de cola, não professor.
 

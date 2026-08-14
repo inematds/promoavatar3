@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: consequência de não agir + primeiro passo nomeado
 
 ### FALA
-Você não precisa saber programar pra orientar seu filho sobre IA. Mas precisa parar de fingir que não sabe orientar.
+Você não precisa saber programar pra orientar seu filho. Mas precisa parar de fingir que não sabe orientar.
 
 A dor real não é a escola estar atrasada. É você, em casa, não saber o que responder quando ele perguntar "pai, vale a pena estudar isso ou a IA vai fazer no meu lugar?".
 

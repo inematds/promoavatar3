@@ -2,7 +2,7 @@ Tipo: alcance
 Formato escolhido: mito vs realidade + medo de ficar pra trás
 
 ### FALA
-Seu colega mais novo não é mais inteligente que você.
+Seu colega novo não é mais inteligente que você.
 Ele só descobriu uma coisa que você ainda não testou.
 Todo mundo acha que quem usa IA no trabalho está "colando".
 Não está. Está só terminando mais cedo o que sobra pra amanhã.

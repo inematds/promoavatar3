@@ -2,7 +2,7 @@ Tipo: autoridade
 Formato escolhido: conceito explicado + perda
 
 ### FALA
-Quase todo mundo com mais de 60 acha que IA serve pra uma coisa: responder pergunta. Serve pra muito mais.
+Você acha que IA só serve pra responder pergunta. Serve pra muito mais.
 O conceito que ninguém explica direito é esse: IA não é uma enciclopédia que fala. É uma ferramenta de transformar o que já existe em algo novo.
 No seu caso, o que já existe é uma vida de trabalho, de casos resolvidos, de ofício aprendido na prática. Isso, hoje, cabe numa conversa. Você conta, ela organiza, e vira texto, aula, orientação pra quem vem depois.
 É diferente de escrever um livro sozinho, que exige disciplina e técnica que ninguém te ensinou. Aqui você fala, ela estrutura.

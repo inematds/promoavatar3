@@ -2,7 +2,7 @@ Tipo: direção
 Formato escolhido: consequência de não agir + perda
 
 ### FALA
-Todo mês que você adia aprender IA pro seu conteúdo, é um mês que o canal menor te alcança.
+Cada mês sem IA, o canal menor te alcança.
 
 Pensa nisso: você grava, edita, posta, esgota. No dia seguinte, de novo. Sem parar pra montar um sistema, porque não sobra tempo pra pensar em sistema.
 
