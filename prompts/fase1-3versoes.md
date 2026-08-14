@@ -262,6 +262,17 @@ Exceção: os nomes do CONTEXTO FIXO acima.
 estrutura diferente, fecho diferente. Se der para trocar a fala do `-alc` pela
 do `-aut` sem ninguém notar, os dois estão errados.
 
+**15. Uma pessoa, não um público.** Escreva para UMA pessoa concreta daquele
+público, numa situação específica (o cara de 52 anos que foi dispensado, a mãe
+que abriu o caderno do filho). Plural genérico ("os profissionais precisam se
+atualizar") não gera identificação — e identificação é o que faz marcar alguém
+nos comentários. Use a coluna Dor da tabela da skill como matéria-prima.
+
+**16. A última frase decide o compartilhamento.** Ela reconecta com o gancho e
+entrega algo que a pessoa consegue REPETIR — uma regra, um princípio, uma
+virada. O CTA é a ordem, não o fecho: o fecho é a ideia que a pessoa leva. Sem
+ela o vídeo é visto e esquecido.
+
 ## O QUE MUDA EM CADA TIPO
 
 ### `-alc` — alcance (25–40s)
