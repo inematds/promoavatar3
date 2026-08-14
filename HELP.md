@@ -47,7 +47,7 @@ mudam.
 
   (nada)              o prompt padrão: três tipos, CTA comercial no -pro
 
-  | prompt=promocao   para assunto que chega como MANIFESTO (lista de
+  | prompt=manifesto  para assunto que chega como MANIFESTO (lista de
                       preceitos). Vira uma tese sobre o custo de não
                       agir, usando no máximo 3 preceitos da lista
 

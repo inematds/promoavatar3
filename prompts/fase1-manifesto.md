@@ -1,4 +1,4 @@
-VARIANTE **promocao** (`| prompt=promocao`): para assunto que chega como
+VARIANTE **manifesto** (`| prompt=manifesto`): para assunto que chega como
 MANIFESTO — lista de preceitos — e precisa virar provocação, reflexão e
 direção. O contrato de saída é idêntico ao do prompt padrão; o que muda é a
 estratégia (ver "QUANDO O ASSUNTO FOR UM MANIFESTO").

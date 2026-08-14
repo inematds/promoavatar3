@@ -193,7 +193,7 @@
       "tarefa": "fluxo-agente",
       "prompt": "prompts/fase1-3versoes.md",
       "variantes": {
-        "promocao": "prompts/fase1-promocao.md",
+        "manifesto": "prompts/fase1-manifesto.md",
         "viral": "prompts/fase1-viral.md"
       },
       "max_tentativas": 2,
