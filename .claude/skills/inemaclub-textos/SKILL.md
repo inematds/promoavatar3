@@ -20,20 +20,20 @@ linguagem, o exemplo e a promessa mudam por público**.
 
 ## Os 10 públicos (gatilho de atenção de cada um)
 
-| slug | Público | Gatilho / promessa |
-|---|---|---|
-| `pessoa-comum` | Pessoa comum / leigo | Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples. |
-| `jovens` | Jovens | Você pode começar uma profissão que ainda está nascendo. |
-| `profissionais` | Profissionais | Não abandone sua profissão. Aprenda a ampliá-la com IA. |
-| `mulheres` | Mulheres | Use a IA para conquistar autonomia, produtividade e novas oportunidades. |
-| `empreendedores` | Empreendedores | Transforme IA em redução de custos, vendas e novos negócios. |
-| `tecnicos` | Técnicos | Pare de apenas testar ferramentas. Aprenda a construir sistemas e agentes. |
-| `40mais` | 40+ | Sua experiência vale mais quando é multiplicada pela IA. |
-| `60mais` | 60+ e aposentados | A IA pode transformar sua experiência de vida em conhecimento, renda e propósito. |
-| `educadores` | Professores e educadores | Você não vai ser substituído pela IA — mas pode ser o professor que ensina com ela. |
-| `criadores` | Criadores de conteúdo | Pare de pagar ferramenta cara. Monte sua própria fábrica de conteúdo com IA. |
-| `recolocacao` | Recolocação / transição de carreira | Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço. |
-| `familia` | Pais/família com visão de futuro (formar os filhos) | As formações de hoje não preparam seu filho para o mundo que vem; você (pai/mãe com visão) pode formá-lo em tecnologia, comportamento, gestão e atitude para o próximo momento da IA. |
+| slug | Público | Dor (usar ANTES da solução) | Gatilho / promessa |
+|---|---|---|---|
+| `pessoa-comum` | Pessoa comum / leigo | Sente que todo mundo está tirando proveito da IA menos ele; medo de ficar para trás até no básico. | Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples. |
+| `jovens` | Jovens | Falta de experiência; medo de escolher profissão que vai sumir; dificuldade do primeiro trabalho; precisar de renda. | Você pode começar uma profissão que ainda está nascendo. |
+| `profissionais` | Profissionais | Medo de ser substituído; rotina que come o dia; ver colega mais novo produzir mais usando IA. | Não abandone sua profissão. Aprenda a ampliá-la com IA. |
+| `mulheres` | Mulheres | Jornada dupla que não deixa tempo para se atualizar; querer autonomia de renda; voltar ao mercado depois de uma pausa. | Use a IA para conquistar autonomia, produtividade e novas oportunidades. |
+| `empreendedores` | Empreendedores | Custo de agência e freela comendo a margem; concorrente entregando mais rápido e mais barato; tempo preso na operação. | Transforme IA em redução de custos, vendas e novos negócios. |
+| `tecnicos` | Técnicos | Virou testador de ferramenta da moda; medo de virar mão de obra commodity; tutoriais infinitos sem nunca ter um sistema seu. | Pare de apenas testar ferramentas. Aprenda a construir sistemas e agentes. |
+| `40mais` | 40+ | Preterido por gente mais nova; experiência tratada como custo, não como ativo; recomeçar do zero assusta. | O mercado está tratando sua experiência como custo. A IA a transforma de novo em vantagem. |
+| `60mais` | 60+ e aposentados | Sentir-se fora do jogo; medo de tecnologia; aposentadoria que não paga as contas; falta de propósito no dia a dia. | A IA pode transformar sua experiência de vida em conhecimento, renda e propósito. |
+| `educadores` | Professores e educadores | Aluno usando IA melhor que o professor; medo de virar fiscal de cola; noites consumidas por prova e plano de aula. | Você não vai ser substituído pela IA — mas pode ser o professor que ensina com ela. |
+| `criadores` | Criadores de conteúdo | Ferramenta cara demais para o retorno; ritmo de postagem que esgota; ver canal menor crescer mais rápido usando IA. | Pare de pagar ferramenta cara. Monte sua própria fábrica de conteúdo com IA. |
+| `recolocacao` | Recolocação / transição de carreira | Currículo ignorado; vaga pedindo o que não tem; a renda acabando enquanto a resposta não vem. | Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço. |
+| `familia` | Pais/família com visão de futuro (formar os filhos) | A escola prepara o filho para o mundo de ontem; medo de ele escolher uma carreira que vai sumir; não saber como orientar. | As formações de hoje não preparam seu filho para o mundo que vem; você (pai/mãe com visão) pode formá-lo em tecnologia, comportamento, gestão e atitude para o próximo momento da IA. |
 
 (11 slugs porque `pessoa-comum` é o público base além dos 10 segmentados; "todos" = todos os slugs.)
 

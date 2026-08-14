@@ -155,10 +155,11 @@ Não é saudação, não é o nome do curso, não é "você já pensou em...", n
 "você sabia". Afirmação morna ("sua experiência vale mais com IA") NÃO é gancho
 — não cria pergunta na cabeça de ninguém.
 
-**2. A dor vem antes da solução, e é a dor DESTE público.** Use o gatilho do
-público (o mesmo gatilho vale para os três tipos daquele público). Para jovem:
-falta de experiência, medo de escolher profissão que vai sumir, dificuldade de
-conseguir o primeiro trabalho, precisar de renda. Genérico não dói.
+**2. A dor vem antes da solução, e é a dor DESTE público.** A dor e o gatilho
+de cada público estão na tabela da skill `inemaclub-textos` (colunas Dor e
+Gatilho) — use os de lá, não invente outros. O mesmo par vale para os três
+tipos daquele público. Genérico não dói: a dor certa é a que este público
+reconhece como sua no primeiro segundo.
 
 **3. NOMEIE a coisa.** "Uma profissão que está nascendo" é vago. Diga qual:
 construtor de agentes de IA, especialista em automação, arquiteto de sistemas
