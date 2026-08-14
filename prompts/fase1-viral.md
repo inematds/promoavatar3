@@ -149,6 +149,10 @@ injustiça ("estão decidindo por você") · perda do que já é seu · orgulho 
 pertencimento ("os que entenderam já estão fazendo") · alívio negado (o conforto
 que engana).
 
+Vergonha e orgulho ferido são sempre AUTO-dirigidos — a pessoa consigo mesma,
+nunca humilhada por quem fala. Incomodar sem humilhar: se a frase soa como
+deboche de quem assiste, troque a emoção.
+
 Teste: leia a primeira frase em voz alta. Se a reação natural for "faz sentido",
 falhou — a reação tem que ser um aperto, uma indignação ou um incômodo. Frase
 bem construída e fria perde para frase simples e quente.
@@ -180,7 +184,8 @@ para chegar nele:
   nomeadas na fala não obriga ninguém a nada;
 - **auto-classificação** — "comenta em qual dos dois você está hoje";
 - **confronto amistoso** — "se você discorda, escreve o porquê, eu quero ler";
-- **marcação com motivo** — "marca a pessoa que você sabe que está adiando";
+- **marcação com motivo** — "marca alguém que precisa ver isto". Convite, não
+  rótulo: a marcação não pode expor o marcado como "o errado" da história;
 - **compromisso público** — "escreve nos comentários o que você vai fazer esta
   semana".
 
