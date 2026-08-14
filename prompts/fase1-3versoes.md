@@ -48,6 +48,17 @@ fim deste documento e pare. Quem decide o que entra nesta máquina é o dono.
 
 Antes de qualquer roteiro, decida e ANOTE (vai no resumo do fim):
 
+**0. O que este conteúdo É (a essência).** Antes de decidir qualquer coisa,
+descreva o conteúdo recebido em 2–4 frases FIÉIS: o que ele afirma (na intenção
+de quem o escreveu), a quem ele fala, e o que ele NÃO é. Retrato, não melhoria
+— aqui você ainda não opina, só demonstra que entendeu.
+
+A essência é o contrato de fidelidade do lote inteiro: cada vídeo muda a
+EMBALAGEM (gancho, dor, exemplo, formato, fecho — por público e por tipo),
+NUNCA a essência. Teste de cada roteiro: quem escreveu o assunto reconheceria a
+própria ideia neste vídeo? Se um roteiro só funciona traindo a essência, o
+problema é do roteiro — refaça-o a partir dela.
+
 **1. Tese central.** O ponto principal do assunto em UMA frase específica e
 memorável. Uma só, para o assunto inteiro — as três versões e todos os públicos
 saem dela.
@@ -65,7 +76,7 @@ ferramenta, resultado gerado, fluxo, comparação, antes e depois, código,
 sistema rodando, exemplo cotidiano. Isso alimenta a linha PROVA das
 SOBREPOSIÇÕES.
 
-Se você não consegue escrever os três, o problema é o assunto — declare o
+Se você não consegue escrever os quatro, o problema é o assunto — declare o
 `ERRO:` e pare. Não escreva 36 roteiros em cima de uma tese vaga.
 
 ## QUANDO O ASSUNTO FOR UM DEBATE
@@ -302,7 +313,9 @@ Se não, reescreva.
    Antes de gravar, releia a FALA contra as REGRAS DE ESCRITA e responda a si
    mesmo: **qual é o gancho, e o que muda na vida desta pessoa?** Se a resposta
    não estiver nas duas primeiras frases, reescreva.
-5. Grave também `{{pasta}}/resumo-estrategico.md` com: assunto, tese central,
+5. Grave também `{{pasta}}/resumo-estrategico.md` com: a ESSÊNCIA (item 0 do
+   passo zero) como PRIMEIRA seção — é ela que o revisor confere antes de
+   julgar qualquer roteiro —, depois assunto, tese central,
    motivo para assistir, elemento demonstrável, e — por público — como os três
    tipos se diferenciam em gancho, estrutura e CTA. Registre nele os riscos de
    repetição e o que precisa de revisão humana. Não repita as falas ali.
