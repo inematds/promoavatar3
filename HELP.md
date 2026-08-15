@@ -49,7 +49,7 @@ renders. O normal é filtrar:
 
 Os 12 públicos:
 
-  pessoa-comum jovens profissionais mulheres empreendedores tecnicos
+  pessoacomum jovens profissionais mulheres empreendedores tecnicos
   40mais 60mais educadores criadores recolocacao familia
 
 ## VARIANTES de texto (o campo | prompt=)

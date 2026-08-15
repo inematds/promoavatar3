@@ -3,17 +3,17 @@
   "prefixo": "C",
   "versao_def": 1,
   "alvos": {
-    "pessoa-comum-alc": {
+    "pessoacomum-alc": {
       "canal": "lives2",
       "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples.",
       "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
-    "pessoa-comum-aut": {
+    "pessoacomum-aut": {
       "canal": "lives2",
       "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples.",
       "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
-    "pessoa-comum-pro": {
+    "pessoacomum-pro": {
       "canal": "lives2",
       "gatilho": "Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples.",
       "fecho": "PROMOCIONAL — este é o vídeo de conversão: use o CTA comercial completo."
@@ -169,17 +169,17 @@
       "fecho": "PROMOCIONAL — este é o vídeo de conversão: use o CTA comercial completo."
     },
     "familia-alc": {
-      "canal": "lives32",
+      "canal": "lives31",
       "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA.",
       "fecho": "ALCANCE — feche com o convite a comentar, marcar alguém ou compartilhar. NÃO use CTA comercial e NÃO cite o inema.club na FALA."
     },
     "familia-aut": {
-      "canal": "lives32",
+      "canal": "lives31",
       "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA.",
       "fecho": "AUTORIDADE — feche com o princípio do roteiro mais um convite a salvar, seguir ou testar. A marca pode aparecer de leve na FALA."
     },
     "familia-pro": {
-      "canal": "lives32",
+      "canal": "lives31",
       "gatilho": "As formações de hoje não preparam seu filho para o mundo que vem — você pode formá-lo para o próximo momento da IA.",
       "fecho": "PROMOCIONAL — este é o vídeo de conversão: use o CTA comercial completo."
     }

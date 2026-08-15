@@ -13,7 +13,7 @@ linguagem, o exemplo e a promessa mudam por público**.
 
 - **Assunto** (obrigatório): tema do vídeo (ex.: "loop de auto-correção da IA").
 - **Públicos** (opcional): lista de públicos da tabela abaixo, ou "todos". Default se
-  não informado: `pessoa-comum` (perguntar em texto livre se quiser mais — NUNCA usar
+  não informado: `pessoacomum` (perguntar em texto livre se quiser mais — NUNCA usar
   AskUserQuestion).
 - **Versões**: 3 por público (3 ângulos/ganchos diferentes do MESMO assunto), salvo
   pedido diferente.
@@ -22,7 +22,7 @@ linguagem, o exemplo e a promessa mudam por público**.
 
 | slug | Público | Dor (usar ANTES da solução) | Gatilho / promessa |
 |---|---|---|---|
-| `pessoa-comum` | Pessoa comum / leigo | Sente que todo mundo está tirando proveito da IA menos ele; medo de ficar para trás até no básico. | Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples. |
+| `pessoacomum` | Pessoa comum / leigo | Sente que todo mundo está tirando proveito da IA menos ele; medo de ficar para trás até no básico. | Você usa IA do jeito preguiçoso; dá pra fazer muito melhor com truques simples. |
 | `jovens` | Jovens | Falta de experiência; medo de escolher profissão que vai sumir; dificuldade do primeiro trabalho; precisar de renda. | Você pode começar uma profissão que ainda está nascendo. |
 | `profissionais` | Profissionais | Medo de ser substituído; rotina que come o dia; ver colega mais novo produzir mais usando IA. | Não abandone sua profissão. Aprenda a ampliá-la com IA. |
 | `mulheres` | Mulheres | Jornada dupla que não deixa tempo para se atualizar; querer autonomia de renda; voltar ao mercado depois de uma pausa. | Use a IA para conquistar autonomia, produtividade e novas oportunidades. |
@@ -35,7 +35,7 @@ linguagem, o exemplo e a promessa mudam por público**.
 | `recolocacao` | Recolocação / transição de carreira | Currículo ignorado; vaga pedindo o que não tem; a renda acabando enquanto a resposta não vem. | Perdeu o emprego ou quer mudar de área? A IA pode ser o atalho do seu recomeço. |
 | `familia` | Pais/família com visão de futuro (formar os filhos) | A escola prepara o filho para o mundo de ontem; medo de ele escolher uma carreira que vai sumir; não saber como orientar. | As formações de hoje não preparam seu filho para o mundo que vem; você (pai/mãe com visão) pode formá-lo em tecnologia, comportamento, gestão e atitude para o próximo momento da IA. |
 
-(11 slugs porque `pessoa-comum` é o público base além dos 10 segmentados; "todos" = todos os slugs.)
+(11 slugs porque `pessoacomum` é o público base além dos 10 segmentados; "todos" = todos os slugs.)
 
 ## Fórmula obrigatória de cada versão
 
@@ -69,7 +69,7 @@ Três pilares que o roteiro pode explorar (escolher o que servir ao assunto/púb
    IA de verdade, não só a ferramenta da moda. Aprendeu uma vez, vale pra sempre:
    como falar, escrever ou andar de bicicleta. A ferramenta muda, o modelo muda —
    quem domina o fundamento se adapta a qualquer novidade. (Ótimo pra públicos com
-   medo de "não alcançar" a corrida da IA: `pessoa-comum`, `40mais`, `60mais`,
+   medo de "não alcançar" a corrida da IA: `pessoacomum`, `40mais`, `60mais`,
    `recolocacao`, `educadores`.)
 2. **Passo a passo, mão na massa.** Muito conteúdo é prático e guiado — do zero,
    sem pular etapa. Bom pra prometer "você consegue fazer, mesmo começando agora".
