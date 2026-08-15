@@ -44,6 +44,7 @@ Regra curta: **se muda com o público, é daqui; se muda com a máquina, é de l
 | quero mudar | arquivo |
 |---|---|
 | público, gatilho, fecho, canal | `flow.json` → `alvos` |
+| **acrescentar** um público novo | `docs/adicionar-publico.md` (5 arquivos, sem restart) |
 | como o texto é escrito (as 3 versões, as `## IMAGENS`) | `prompts/fase1-3versoes.md` |
 | avatar, voz, motor, template do estúdio | `flow.json` → `avatar_id`, `voice_id`, `engine`, `template` |
 | o layout do reel | `templates/` (e `template` na raiz do `flow.json`) |
