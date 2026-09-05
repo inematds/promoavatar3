@@ -1,0 +1,72 @@
+Tipo: pro
+Formato escolhido: dor → consequência de não agir → primeiro passo nomeado
+
+## Ganchos descartados
+1. "Ficar só olhando IA de longe tem um preço." [descartado]
+2. "Enquanto você adia o básico, alguém já entendeu." [vencedor]
+3. "Essa sensação de ficar pra trás não passa sozinha." [descartado]
+4. "O primeiro passo não é ferramenta, é fundamento." [descartado]
+5. "Adiar o básico custa mais do que aprender ele." [descartado]
+Emoção-gatilho da vencedora: perda do que já é seu
+Por que venceu: liga direto à dor de Kaique (não ter experiência nem saber por onde começar de verdade) sem inventar prazo nem número.
+
+### FALA
+Enquanto você adia o básico, alguém já entendeu.
+Kaique vive isso agora: foi numa entrevista e o entrevistador perguntou o que ele sabia fazer com IA além de conversar.
+Se isso continuar, a distância entre quem entende IA e quem só ouve falar aumenta toda semana — e é isso que alimenta não ter experiência nem saber por onde começar de verdade.
+Não é sobre virar especialista da noite pro dia. É sobre parar de adiar o primeiro fundamento.
+O primeiro passo de hoje é simples: escolhe uma dúvida real que você tem sobre IA e vai atrás só dessa resposta, sem se perder em mil abas.
+Comenta aqui embaixo qual é essa dúvida que você vai resolver esta semana.
+Quem começa pelo fundamento chega mais longe do que quem só corre atrás de atalho.
+
+### SOBREPOSIÇÕES DE TELA
+ATENÇÃO (0–2s): "Enquanto você adia o básico, alguém já entendeu."
+RETENÇÃO: consequência de adiar o básico, sem prazo inventado
+PROVA: distância crescente entre quem entende e quem só ouve falar
+ENGAJAMENTO: compromisso público — comenta a dúvida que vai resolver
+CTA (fecho): comenta agora o compromisso
+
+## IMAGENS
+
+IMAGEM 1 — "Enquanto você adia o básico, alguém já entendeu." [perda do que já é seu]
+headline: SÓ OLHAR | TEM UM PREÇO
+hook: ninguém te mostra essa {início}
+An hourglass with sand turning into scattered gray dust instead of falling normally, dim warm light, cinematic photo, no embedded text
+
+IMAGEM 2 — "Kaique vive isso agora" [identificação]
+headline: UMA CENA REAL
+hook: a {início} que falta pesa todo dia
+A single figure standing at a closed door with light seeping from underneath, warm-cold split lighting, cinematic photo
+
+IMAGEM 3 — "se continuar, a distância aumenta" [perda do que já é seu]
+headline: A DISTÂNCIA | SÓ AUMENTA
+hook: toda semana sem {início} custa mais
+Two parallel roads diverging further apart with each frame, one paved and lit, one cracked and dark, cinematic wide shot
+
+IMAGEM 4 — "não é virar especialista da noite pro dia" [alívio negado (o conforto que engana)]
+headline: NÃO É VIRAR EXPERT | É NÃO ADIAR
+hook: o primeiro passo cabe {início}
+A single small light switch being flipped in a dark room, gentle warm glow spreading slowly, cinematic composition
+
+IMAGEM 5 — "escolhe uma dúvida real" [medo de ficar para trás]
+headline: UMA DÚVIDA REAL | HOJE
+hook: começa pelo menor pedaço da {início}
+A tiny seed being planted by hand in warm soil under soft golden light, cinematic macro shot, no embedded text
+
+IMAGEM 6 — "vai atrás só dessa resposta" [orgulho ferido]
+headline: SÓ ESSA RESPOSTA | NADA MAIS
+hook: foco sem se perder em mil abas, com {início}
+A single lit window standing out among many dark ones on a building facade at night, cinematic wide shot
+
+IMAGEM 7 — "comenta a dúvida que vai resolver" [compromisso público]
+headline: COMENTA SUA DÚVIDA
+hook: diga em voz alta sua {início}
+A hand writing a short commitment note on paper under warm desk light, rest of room in soft shadow, cinematic close-up
+
+IMAGEM 8 — "quem começa pelo fundamento chega mais longe" [fecho repetível]
+headline: FUNDAMENTO PRIMEIRO | CHEGA MAIS LONGE
+hook: a {início} sólida não se perde
+A small warm light growing steadily brighter along a dark path toward a distant glowing horizon, cinematic wide shot, no embedded text
+
+## ESTRUTURA
+Gancho nomeia o custo de adiar o básico, mostra a consequência concreta pra Kaique, fecha com passo nomeado de hoje e compromisso público no comentário.
