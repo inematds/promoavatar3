@@ -1,5 +1,7 @@
 # promoavatar3
 
+**🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
+
 Três vídeos por público, em vez de um. O bot escreve os textos e PARA;
 `/aprovar C#N` libera avatar, download e reel.
 

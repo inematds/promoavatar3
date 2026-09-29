@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>promoavatar3 — tres videos por público: alcance, autoridad, promocional</title>
+<meta content="Repo del dominio del flujo /promoavatar3 de inemaccbot: cada público genera tres guiones con funciones distintas (-alc, -aut, -pro), 36 objetivos en total, con una aprobación humana antes de cualquier renderizado." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;display:block}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px 1fr;gap:16px;margin-bottom:26px}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+<link href="https://inematds.github.io/promoavatar3/guia/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/promoavatar3/guia/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/promoavatar3/guia/es/" hreflang="es" rel="alternate"/></head>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav><div class="wrap">
+<a class="brand" href="#top"><span class="emoji">🎯</span> promoavatar3</a>
+<span class="sep">|</span>
+<span class="clubpro">
+<a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
+<span class="sep">-</span>
+<a class="pro" href="https://inema.pro" rel="noopener" target="_blank">PRO</a>
+</span>
+<div class="links">
+<a class="sec" href="#oque">Qué es</a>
+<a class="sec" href="#tipos">Los tres tipos</a>
+<a class="sec" href="#fluxo">Cómo funciona</a>
+<a class="sec" href="#pre">Requisitos previos</a>
+<a class="sec" href="#guia">Guía de uso</a>
+<button aria-label="Alternar tema" class="tgl" id="themeToggle" title="Alternar tema">🌙</button>
+<a class="btn" href="https://github.com/inematds/promoavatar3" rel="noopener" target="_blank">GitHub</a>
+</div>
+</div></nav>
+<header class="hero" id="top">
+<div class="glow"></div>
+<div class="wrap">
+<div>
+<span class="chip">Flujo C# · 36 objetivos · puerta humana</span>
+<h1>Tres videos por público — y cada uno con una <span class="amb">función diferente</span>.</h1>
+<p class="lead">Alcance, autoridad y promocional no son tres ganchos del mismo guion. Lo que distingue a los tres es el cierre, y un video que intenta ser los tres al mismo tiempo es el que tiene menor alcance.</p>
+<div class="cta">
+<a class="btn" href="#guia">Comenzar la guía</a>
+<a class="btn ghost" href="https://github.com/inematds/promoavatar3" rel="noopener" target="_blank">Ver en GitHub</a>
+</div>
+</div>
+<figure><img alt="promoavatar3 — tres videos por público" src="../assets/hero.png"/></figure>
+</div>
+</header>
+<section id="oque"><div class="wrap">
+<span class="chip">Qué es</span>
+<h2>El promoavatar, con tres resultados por público</h2>
+<p class="sub">Repo de <strong>dominio</strong> del flujo <code>/promoavatar3</code> del <a href="https://inematds.github.io/inemaccbot/guia/">inemaccbot</a>. El mecanismo es el mismo que el de <a href="https://inematds.github.io/promoavatar/guia/">promoavatar</a> — el bot escribe y SE DETIENE, tú generas los avatares, <code>/aprovar</code> libera el resto. La diferencia es lo que sale de la fase de texto.</p>
+<div class="grid g3">
+<div class="card"><h3>3️⃣ Tres guiones por público</h3><p>Los 12 públicos × 3 tipos = <strong>36 objetivos</strong>, escritos <code>&lt;publico&gt;-&lt;tipo&gt;</code>: <code>jovens-alc</code>, <code>mulheres-pro</code>, <code>40mais-aut</code>…</p></div>
+<div class="card"><h3>🔤 Referencia C#</h3><p>Este flujo es <code>C#</code>; o <code>promoavatar</code> é <code>A#</code> e o <code>promoclub</code> é <code>P#</code>. El bot rechaza referencias con un prefijo cambiado.</p></div>
+<div class="card"><h3>📺 El mismo canal, tres funciones</h3><p>Los tres tipos de un público comparten su canal y su disparador — llegan al mismo <code>livesN</code>. Orden recomendado: alcance → autoridad → promocional.</p></div>
+</div>
+</div></section>
+<section id="tipos"><div class="wrap">
+<span class="chip">Los tres tipos</span>
+<h2>No son tres variaciones: son tres funciones</h2>
+<p class="sub">Lo que distingue a los tres es el cierre. El <code>-alc</code> no tiene ningún CTA comercial (ni hablado ni en el reel), el <code>-aut</code> menciona la marca de pasada, el <code>-pro</code> convierte.</p>
+<div class="grid g3">
+<div class="card"><h3>📣 -alc · alcance</h3><p><strong>25–40s.</strong> Detener el desplazamiento y ser compartido. El público comenta y comparte. CTA: comentar / compartir — <strong>nunca comercial</strong>.</p></div>
+<div class="card"><h3>🎓 -aut · autoridad</h3><p><strong>35–60s.</strong> Enseñar algo concreto y lograr que lo guarden. El público lo guarda y te sigue. CTA: guardar / seguir / probar.</p></div>
+<div class="card"><h3>🎯 -pro · promocional</h3><p><strong>30–45s.</strong> Conectar el dolor con la solución. El público hace clic. Un solo CTA, para inema.club.</p></div>
+</div>
+<p class="sub" style="margin-top:26px">Por eso la posición importa más aquí que en el <code>promoavatar</code>: <strong>sin una posición sobre la mesa, los tres tipos se reducen a uno solo</strong> — el mismo resumen equilibrado con tres presentaciones, y el <code>-alc</code> se vuelve imposible, porque "opinión contraria" no existe si nadie toma una posición. Con la posición definida, los tres se separan: el <code>-alc</code> defiende, el <code>-aut</code> explica la mecánica que lo sustenta, el <code>-pro</code> lo transforma en una consecuencia práctica.</p>
+</div></section>
+<section id="fluxo"><div class="wrap">
+<span class="chip">Cómo funciona</span>
+<h2>Tres fases, con la pausa en medio</h2>
+<p class="sub">La fase de texto se ejecuta una vez para todo el flujo; descargar y reel se ejecutan por objetivo.</p>
+<div class="flow">
+<span>1. texto (alcance de flujo)</span><span class="arr">→</span>
+<span>⏸️ tú grabas en HeyGen</span><span class="arr">→</span>
+<span>/aprovar C#N</span><span class="arr">→</span>
+<span>2. descargar (por objetivo)</span><span class="arr">→</span>
+<span>3. reel (por objetivo)</span>
+</div>
+<div class="grid g3" style="margin-top:28px">
+<div class="card"><h3>1 · texto</h3><p>Un archivo por objetivo en <code>textos/C&lt;N&gt;/&lt;alvo&gt;.md</code>, uno más <code>resumo-estrategico.md</code> que indica qué posición quedó definida. El bot envía la <code>### FALA</code> de cada uno en el chat y PARA.</p></div>
+<div class="card"><h3>2 · descargar</h3><p>Busca en HeyGen el video cuyo nombre sea exactamente <code>C&lt;N&gt;-&lt;alvo&gt;-v1</code> y descarga el MP4 — la versión <strong>con</strong> subtítulos incrustados cuando el estudio grabó con ellos, y limpios cuando no.</p></div>
+<div class="card"><h3>3 · reel</h3><p>Arma el reel 9:16 y lo entrega en el canal del público — el mismo <code>livesN</code> para los tres tipos.</p></div>
+</div>
+</div></section>
+<section id="pre"><div class="wrap">
+<span class="chip">Requisitos previos</span>
+<h2>Lo que debe estar publicado</h2>
+<p class="sub">Aquí no hay código para instalar: este repo es la definición que lee el bot. Lo que necesitas es el bot en funcionamiento, la cuenta de HeyGen y las carpetas del canal.</p>
+<div class="grid g3">
+<div class="card"><h3>inemaccbot en ejecución</h3><p>Con este repo declarado en <code>config/fluxos.json</code>.</p><pre><span class="c"># en el chat autorizado</span>
+<span class="k">/fluxos</span>
+<span class="k">/promoavatar3 help</span></pre></div>
+<div class="card"><h3>Cuenta de HeyGen</h3><p>Tres avatares por público, grabados a mano — este es el costo real de este flujo.</p><pre><span class="c"># el nombre debe ser exacto</span>
+C&lt;N&gt;-&lt;alvo&gt;-v&lt;versao&gt;
+<span class="c"># p. ej.:</span> <span class="s">C7-jovens-pro-v1</span></pre></div>
+<div class="card"><h3>Carpeta del canal</h3><p>Derivada del canal del público, igual que el <code>promoavatar</code>.</p><pre><span class="k">mkdir -p</span> <span class="s">~/projetos/yt-pub-lives24/imports/videos</span></pre></div>
+</div>
+</div></section>
+<section id="guia"><div class="wrap">
+<span class="chip">Guía de uso · paso a paso</span>
+<h2>Del tema a los tres reels</h2>
+<p class="sub">Comandos escritos en el chat de Telegram, en el bot autorizado.</p>
+<div class="step"><div class="b">1</div><div>
+<h3>Filtra los objetivos y compruébalos en modo sombra</h3>
+<p>Los 36 están declarados, pero ejecutar los 36 de una vez son <strong>36 avatares generados a mano</strong>. Lo normal es filtrar por público. <code>| sombra</code> imprime fase × objetivo × cola × tarea y no pone nada en cola.</p>
+<pre><span class="k">/promoavatar3 &lt;assunto&gt; | alvos=jovens-alc | sombra</span></pre>
+</div></div>
+<div class="step"><div class="b">2</div><div>
+<h3>Crea el flujo con los tres tipos de un público</h3>
+<p>La forma recomendada de empezar: un público, los tres tipos — así puedes publicar en el orden alcance → autoridad → promocional y comparar.</p>
+<pre><span class="k">/promoavatar3 &lt;assunto&gt; | alvos=jovens-alc,jovens-aut,jovens-pro</span>
+<span class="k">/promoavatar3 &lt;assunto&gt; | legenda</span>     <span class="c"># el estándar es SIN subtítulos</span>
+<span class="k">/promoavatar3 &lt;assunto&gt; | versao=2</span>     <span class="c"># cambia el -vN del título</span></pre>
+</div></div>
+<div class="step"><div class="b">3</div><div>
+<h3>Define tú mismo la posición</h3>
+<p>Si no escribes una, el prompt indica al agente que tome una posición y la registre en el <code>resumo-estrategico.md</code> cuál quedó definido y por qué. Pero <strong>tu posición prevalece sobre la suya</strong> — escribe la tuya, junto con un hecho concreto (para que la línea PROVA no quede vacía) y la pregunta que quieres que respondan en los comentarios.</p>
+<pre><span class="c"># se permite opinar; no inventar hechos</span>
+<span class="c"># (las reglas 9 y 10 del prompt siguen vigentes)</span></pre>
+</div></div>
+<div class="step"><div class="b">4</div><div>
+<h3>Discrepa en la puerta, no después</h3>
+<p>Como el resumen indica la posición elegida, puedes discrepar de ella antes de generar cualquier avatar. Aquí eso aplica <strong>tres renders manuales por público</strong>, no uno.</p>
+<pre><span class="k">/status C#7</span>                <span class="c"># fase × objetivo, y los títulos</span>
+<span class="k">/refazer C#7 jovens-alc</span>    <span class="c"># solo el objetivo que no quedó bien</span></pre>
+</div></div>
+<div class="step"><div class="b">5</div><div>
+<h3>Graba con el nombre exacto — sufijo abreviado</h3>
+<p>Los sufijos son <code>alc</code>/<code>aut</code>/<code>pro</code>, no <code>alcance</code>/<code>promocional</code>: el título largo ya se truncó en HeyGen en producción y arruinó la coincidencia. Un carácter distinto y la fase de descarga no encuentra nada.</p>
+<pre><span class="s">C7-jovens-alc-v1</span>
+<span class="s">C7-jovens-aut-v1</span>
+<span class="s">C7-jovens-pro-v1</span></pre>
+</div></div>
+<div class="step"><div class="b">6</div><div>
+<h3>Libera y da seguimiento</h3>
+<p><code>/aprovar</code> desbloquea la descarga y el montaje de los reels. Si falla un objetivo, vuelve a hacer solo ese.</p>
+<pre><span class="k">/aprovar C#7</span>
+<span class="k">/status C#7</span>
+<span class="k">/cancelar C#7 [alvo]</span></pre>
+</div></div>
+<div class="step"><div class="b">7</div><div>
+<h3>Publica en el orden correcto</h3>
+<p>Alcance primero (atrae gente), autoridad después (convierte la atención en confianza) y promocional al final (convierte la confianza en un clic).</p>
+<pre><span class="c"># -alc → -aut → -pro</span></pre>
+</div></div>
+<p class="sub" style="margin-top:10px"><strong>Atención:</strong> <code>flow.json</code> y el prompt se copian dentro del flujo cuando se crea. Editar aquí solo afecta los flujos NUEVOS — un flujo en curso no cambia sus reglas a mitad del proceso. Para aplicarlo a lo que ya existe, crea otro.</p>
+</div></section>
+<footer>
+<div class="wrap">
+<div class="pill">flow.json</div><div class="pill">prompts</div><div class="pill">36 objetivos</div><div class="pill">HeyGen</div><div class="pill">inemaccbot</div>
+<p style="margin-top:18px">promoavatar3 · repo del dominio del flujo <code>C#</code> ·
+      <a href="https://github.com/inematds/promoavatar3">inematds/promoavatar3</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+  (function(){
+    var KEY='promoavatar3-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>
