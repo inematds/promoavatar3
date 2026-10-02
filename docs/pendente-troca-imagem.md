@@ -35,8 +35,8 @@ muda o reel que o dono aprova e dobra o número de imagens por reel.
 
 ## Como validar antes de lote
 
-1 reel de teste (mesmo roteiro, versão atual × versão 2–3 s) lado a lado para o dono escolher. Depende do
-render do HyperFrames voltar a funcionar: em 2026-10-02 ele falhava com "socket hang up"
+1 reel de teste (mesmo roteiro, versão atual × versão 2–3 s) lado a lado para o dono escolher — feito em
+2026-10-02 (ver abaixo). O render do HyperFrames, que falhava com "socket hang up", foi consertado no mesmo dia
 (`~/projetos/wifi/LIMITES.md`).
 
 ## Implementado (2026-10-02) — opção `--troca-s`
