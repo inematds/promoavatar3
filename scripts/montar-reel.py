@@ -154,6 +154,9 @@ def main() -> int:
     ap.add_argument("--sem-legenda", action="store_true",
                     help="legenda palavra a palavra e LIGADA por default "
                          "(docs/legenda.md); isto desliga")
+    ap.add_argument("--troca-s", type=float, default=0.0,
+                    help="opcao: imagem do topo troca a cada ~N s (2.5 recomendado) com variacoes da mesma "
+                         "cena; 0 = desligado (padrao). Ver docs/pendente-troca-imagem.md")
     ap.add_argument("--pular-preparo", action="store_true",
                     help="ja existe index.html e voce so quer render/QC")
     ap.add_argument("--saida", default=None,
@@ -188,6 +191,8 @@ def main() -> int:
             cmd += ["--mapa", os.path.expanduser(a.mapa)]
         if a.sem_legenda:
             cmd += ["--sem-legenda"]
+        if a.troca_s > 0:
+            cmd += ["--troca-s", str(a.troca_s)]
         r = sh(cmd)
         print(r.stdout.rstrip() or r.stderr.rstrip())
         if r.returncode != 0:

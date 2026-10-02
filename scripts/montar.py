@@ -187,9 +187,18 @@ def main() -> int:
              f"ao preparar.py.")
 
     # ---------- corpo ----------
-    cards = "\n".join(
-        f'        <img id="c{n}" class="card" src="{esc(rel(i["caminho"]))}" data-track-index="1" />'
-        for n, i in enumerate(imgs[:len(segs)], 1))
+    # els[n] = [(id, inicio)] — o card do segmento e, com --troca-s, suas variacoes
+    # (mesma cena, outro enquadramento) que entram dentro do mesmo segmento.
+    els = {}
+    linhas_cards = []
+    for n, i in enumerate(imgs[:len(segs)], 1):
+        els[n] = [(f"c{n}", float(segs[n - 1].get("inicio", 0)))]
+        linhas_cards.append(f'        <img id="c{n}" class="card" src="{esc(rel(i["caminho"]))}" data-track-index="1" />')
+        for j, v in enumerate(i.get("variantes") or [], 1):
+            if v.get("caminho"):
+                els[n].append((f"c{n}v{j}", float(v["inicio"])))
+                linhas_cards.append(f'        <img id="c{n}v{j}" class="card" src="{esc(rel(v["caminho"]))}" data-track-index="1" />')
+    cards = "\n".join(linhas_cards)
     heads = "\n".join(
         f'        <div class="headline" id="h{n}">{headline_html(s.get("headline"), hl.get("maiusculas", True))}</div>'
         for n, s in enumerate(segs, 1))
@@ -325,7 +334,7 @@ def main() -> int:
         if tr.get("flash"):
             tl.append(f'      tl.set("#flash",{{opacity:0.9}},{t-0.03:.2f});')
             tl.append(f'      tl.to("#flash",{{opacity:0,duration:0.14,ease:"power2.out"}},{t:.2f});')
-        tl.append(f'      tl.to("#c{n-1}",{{opacity:0,duration:0.22,ease:"power2.in"}},{t-0.05:.2f});')
+        tl.append(f'      tl.to("#{els[n-1][-1][0]}",{{opacity:0,duration:0.22,ease:"power2.in"}},{t-0.05:.2f});')
         tl.append(f'      tl.fromTo("#c{n}",{{opacity:0,scale:{tr.get("escala_entrada",1.08)}}},'
                   f'{{opacity:1,scale:1,duration:{D},ease:"power3.out"}},{t:.2f});')
         tl.append(f'      tl.to("#h{n-1}",{{opacity:0,y:-16,duration:0.22,ease:"power2.in"}},{t-0.08:.2f});')
@@ -335,6 +344,12 @@ def main() -> int:
             tl.append(f'      tl.to("#b{n-1}",{{opacity:0,y:-10,duration:0.22,ease:"power2.in"}},{t-0.08:.2f});')
             tl.append(f'      tl.fromTo("#b{n}",{{opacity:0,y:14}},'
                       f'{{opacity:1,y:0,duration:{D},ease:"power2.out"}},{t+0.25:.2f});')
+    # variacoes (--troca-s): troca so a imagem, sem flash nem headline nova
+    for n in range(1, len(segs) + 1):
+        for (ant, _), (vid, tv) in zip(els[n], els[n][1:]):
+            tl.append(f'      tl.to("#{ant}",{{opacity:0,duration:0.25,ease:"power1.inOut"}},{tv-0.05:.2f});')
+            tl.append(f'      tl.fromTo("#{vid}",{{opacity:0,scale:1.05}},'
+                      f'{{opacity:1,scale:1,duration:0.45,ease:"power2.out"}},{tv:.2f});')
     # legenda: acende no `start` da palavra, apaga quando a proxima comeca.
     # `set` (e nao `to`) de proposito: sem fade, a troca e seca e o render por
     # seek acerta o quadro exato.
@@ -346,12 +361,13 @@ def main() -> int:
 
     # pulsos: nenhum beat acima do teto (regra dos <=4s), calculado, nao chutado
     teto = float(tr.get("pulso_max_s", 3.6))
-    marcos = [float(s.get("inicio", 0)) for s in segs] + [dur]
-    for n in range(1, len(segs) + 1):
-        ini, fim = marcos[n - 1], marcos[n]
+    seq = [e for n in range(1, len(segs) + 1) for e in els[n]]      # cada card no ar, em ordem
+    marcos = [t for _, t in seq] + [dur]
+    for k, (cid, _) in enumerate(seq):
+        ini, fim = marcos[k], marcos[k + 1]
         t = ini + teto
         while t < fim - 0.3:
-            tl.append(f'      tl.fromTo("#c{n}",{{filter:"brightness({topo.get("escurecer",0.62)}) saturate(1.15)"}},'
+            tl.append(f'      tl.fromTo("#{cid}",{{filter:"brightness({topo.get("escurecer",0.62)}) saturate(1.15)"}},'
                       f'{{filter:"brightness({round(topo.get("escurecer",0.62)+0.08,2)}) saturate(1.25)",'
                       f'duration:0.5,yoyo:true,repeat:1,ease:"sine.inOut"}},{t:.2f});')
             t += teto

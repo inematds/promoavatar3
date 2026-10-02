@@ -32,7 +32,8 @@ Uso:
   [--explicativo edicion/exp.mp4] [--sem-imagens] [--sem-transcricao]
   [--sem-montar] [--flow ... --mapa ... --template ...  (so para override)]
 """
-import argparse, json, os, re, subprocess, sys, shutil
+import argparse
+import math, json, os, re, subprocess, sys, shutil
 from pathlib import Path
 
 AQUI = Path(__file__).resolve().parent
@@ -81,6 +82,30 @@ def _limpa(p: str) -> str:
 
 
 MIN_CARD = 1.5   # segundos que um card do topo precisa ficar no ar
+
+
+# Troca rapida (opcao, desligada por padrao — pendencia de 2026-10-02):
+# a imagem do topo ficava ~6,3 s no ar (mediana); com --troca-s N cada segmento
+# mais longo que N ganha VARIACOES da mesma cena (mesmo prompt, outro enquadramento
+# e outro seed), repartindo o tempo. Headline e base nao mudam: so a imagem.
+VARIACOES = [", same scene, closer framing, different camera angle",
+             ", same scene, wide establishing shot from another side",
+             ", same scene, detail shot of the main object"]
+
+
+def plano_variantes(inicios: list, duracao: float, troca_s: float, max_extra: int = 4) -> list:
+    """Para cada segmento, os instantes (s) em que entra uma variacao da imagem.
+    Segmento de d segundos recebe ceil(d/troca_s)-1 variacoes (no maximo max_extra),
+    repartidas por igual; nenhuma fatia fica menor que 1,5 s (MIN_CARD)."""
+    marcos = list(inicios) + [duracao]
+    plano = []
+    for ini, fim in zip(marcos, marcos[1:]):
+        d = fim - ini
+        k = min(max_extra, max(0, math.ceil(d / troca_s) - 1)) if troca_s > 0 else 0
+        while k and d / (k + 1) < MIN_CARD:
+            k -= 1
+        plano.append([round(ini + d * j / (k + 1), 3) for j in range(1, k + 1)])
+    return plano
 
 
 def tempos_dos_segmentos(transcript: dict, imagens: list,
@@ -233,6 +258,9 @@ def main() -> int:
                     help="templates/mapa.json — formato editorial -> layout. "
                          "Omitido: usa o do repo deste script, se existir.")
     ap.add_argument("--template", default=None, help="override do operador")
+    ap.add_argument("--troca-s", type=float, default=0.0,
+                    help="opcao: troca a imagem do topo a cada ~N s (2.5 recomendado) com variacoes "
+                         "da mesma cena; 0 = desligado (padrao, comportamento de sempre)")
     ap.add_argument("--sem-montar", action="store_true",
                     help="para no manifesto, sem gerar o index.html")
     a = ap.parse_args()
@@ -464,6 +492,30 @@ def main() -> int:
         (ws / "segmentos.json").write_text(
             json.dumps(segs, ensure_ascii=False, indent=1), encoding="utf-8")
         man["segmentos"] = str(ws / "segmentos.json")
+        if a.troca_s > 0:
+            plano = plano_variantes([it["inicio"] for it in man["imagens"]],
+                                    man["avatar"].get("duracao") or 0.0, a.troca_s)
+            novas = 0
+            for it, tempos_v in zip(man["imagens"], plano):
+                it["variantes"] = []
+                if not tempos_v or not it.get("prompt") or it.get("erro") or not it.get("caminho"):
+                    continue          # imagem enviada pelo usuario ou que falhou: nao inventa variacao
+                for j, t in enumerate(tempos_v, 1):
+                    dest_v = imgdir / f"topo-{it['n']:02d}v{j}.png"
+                    if not (dest_v.exists() and dest_v.stat().st_size > 0
+                            and dimensoes_png(dest_v) == (img_w, img_h)):
+                        r = sh([sys.executable, str(AQUI / "gen-imagem.py"),
+                                "--prompt", it["prompt"] + VARIACOES[(j - 1) % len(VARIACOES)],
+                                "--out", str(dest_v), "--seed-key", f"{a.alvo}#{it['n']}v{j}",
+                                "--width", str(img_w), "--height", str(img_h)])
+                        if r.returncode != 0:
+                            man.setdefault("variantes_erro", []).append(f"{it['n']}v{j}")
+                            continue
+                        novas += 1
+                    it["variantes"].append({"caminho": str(dest_v), "inicio": t})
+            man["troca_s"] = a.troca_s
+            print(f"troca      a cada ~{a.troca_s}s: {sum(len(i['variantes']) for i in man['imagens'])} variacoes "
+                  f"({novas} geradas agora)")
         if faltando:
             man["segmentos_aviso"] = (
                 f"sem headline nas imagens {faltando} — a fase de texto deveria "

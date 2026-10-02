@@ -1,6 +1,6 @@
-# PENDENTE — Imagem do topo trocando a cada 2–3 s
+# Imagem do topo trocando a cada 2–3 s — OPÇÃO pronta, padrão pendente
 
-Anotado em 2026-10-02 a pedido do dono. **Ainda NÃO aplicado.** É mudança de visual, não correção de bug:
+Anotado em 2026-10-02 a pedido do dono. **Implementado como opção no mesmo dia (desligada por padrão)**; falta o dono decidir se vira padrão. É mudança de visual, não correção de bug:
 muda o reel que o dono aprova e dobra o número de imagens por reel.
 
 ## O que foi medido
@@ -38,3 +38,30 @@ muda o reel que o dono aprova e dobra o número de imagens por reel.
 1 reel de teste (mesmo roteiro, versão atual × versão 2–3 s) lado a lado para o dono escolher. Depende do
 render do HyperFrames voltar a funcionar: em 2026-10-02 ele falhava com "socket hang up"
 (`~/projetos/wifi/LIMITES.md`).
+
+## Implementado (2026-10-02) — opção `--troca-s`
+
+```
+python3 scripts/montar-reel.py ... --troca-s 2.5
+```
+
+- `preparar.py`: cada segmento maior que N s ganha até 4 **variações da mesma cena** (mesmo prompt + outro
+  enquadramento: "closer framing", "wide establishing shot", "detail shot"; seed `<alvo>#<n>v<j>`), repartindo o
+  tempo do segmento; nenhuma fatia menor que 1,5 s. Imagem enviada pelo usuário não ganha variação.
+  `plano_variantes()` tem testes em `tests/test_troca_rapida.py`.
+- `montar.py`: as variações entram como cards extras no mesmo segmento (troca suave de 0,45 s, sem flash e sem
+  headline nova); o pulso de brilho passa a valer por card.
+- Sem `--troca-s` nada muda (0 = comportamento de sempre).
+
+**Medido no C184-tecnicos-pro** (`qa_short.py --layout empilhado` do makeshorts):
+
+| | Antes | Com `--troca-s 2.5` |
+|---|---|---|
+| Mediana da imagem do topo | 6,3 s (lote) / 5,5 s (C184) | **3,0 s** |
+| Maior trecho parado | **16,2 s** | 4,8 s |
+| Imagens geradas | 6 | 6 + 14 variações (flux2-klein local) |
+
+Vídeos para comparar: `~/projetos/output/promoavatar3/teste-troca-imagem-2026-10-02/`
+(`…-ANTES.mp4` × `…-DEPOIS-troca-2.5s.mp4`).
+
+**Pendente:** o dono assistir os dois e decidir se `--troca-s 2.5` vira padrão no `flow.json`.
