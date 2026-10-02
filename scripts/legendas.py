@@ -92,6 +92,9 @@ def _limpar(bruto: str) -> str:
     return re.sub(r"^\W+|\W+$", "", (bruto or ""), flags=re.UNICODE).upper()
 
 
+MIN_DEGENERADO = 0.02   # so para palavras com o mesmo inicio; nao e piso geral
+
+
 def montar(transcript: dict, kws: set) -> list:
     """Uma entrada por palavra, sem buraco entre elas."""
     ws = transcript.get("words") or []
@@ -103,14 +106,25 @@ def montar(transcript: dict, kws: set) -> list:
         if palavra:
             limpas.append((palavra, float(w["start"]), float(w.get("end") or w["start"])))
 
+    # O ASR as vezes devolve palavras fora de ordem ou com o mesmo inicio. Sem
+    # ordenar, "inicio da proxima - inicio desta" fica <= 0 e a palavra nunca
+    # sai da tela (01/10/2026: 803 de 1.966 reels; no C184 "APARECER" ficou
+    # presa e as seguintes foram desenhadas por cima). Ordena (estavel) e, se
+    # duas comecam juntas, empurra a seguinte o minimo (MIN_DEGENERADO).
+    limpas.sort(key=lambda x: x[1])
     saida = []
+    fim_ant = 0.0
     for i, (palavra, ini, fim) in enumerate(limpas):
         # Ate o inicio da proxima: sem lacuna, a legenda nao pisca entre
         # palavras. Na ultima, a duracao propria mais um respiro.
         # Sem piso de duracao quando ha proxima: o ASR devolve palavras de 40ms
         # e um piso as empurraria por cima da seguinte — duas na tela de uma vez.
+        ini = max(ini, fim_ant)
         prox = limpas[i + 1][1] if i + 1 < len(limpas) else None
         dur = (prox - ini) if prox is not None else max(fim - ini, 0.05) + 0.15
+        if dur <= 0:
+            dur = MIN_DEGENERADO
+        fim_ant = ini + dur
         saida.append({
             "start": round(ini, 3),
             "dur": round(dur, 3),

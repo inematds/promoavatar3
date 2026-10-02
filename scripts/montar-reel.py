@@ -60,6 +60,40 @@ def duracao(v: str) -> float:
         return 0.0
 
 
+def medir_lufs(v: str) -> float:
+    """Loudness integrada (LUFS) do arquivo, pelo ebur128 do ffmpeg."""
+    r = subprocess.run(["ffmpeg", "-nostdin", "-hide_banner", "-nostats", "-i", v, "-af", "ebur128",
+                        "-f", "null", "-"], capture_output=True, text=True)
+    linhas = [l for l in r.stderr.splitlines() if l.strip().startswith("I:")]
+    if r.returncode != 0 or not linhas:
+        raise RuntimeError(f"ebur128 falhou em {v}")
+    return float(linhas[-1].split()[1])
+
+
+def normalizar_volume(v, alvo=-14.0, tp=-1.5) -> float:
+    """Leva o entregavel a -14 LUFS (o nivel em que Reels/TikTok/Shorts tocam) em duas passadas:
+    mede, depois aplica linear. So o audio e refeito; o video e copiado. Devolve o LUFS final.
+    Achado de 01/10/2026: os reels saiam a ~-20,5 LUFS (C184) — o concat por copia nao normaliza."""
+    v = Path(v)
+    r = subprocess.run(["ffmpeg", "-nostdin", "-hide_banner", "-nostats", "-i", str(v), "-af",
+                        f"loudnorm=I={alvo}:TP={tp}:LRA=11:print_format=json", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    if r.returncode != 0 or "{" not in r.stderr:
+        raise RuntimeError("loudnorm (medicao) falhou: " + r.stderr.strip()[-300:])
+    m = json.loads(r.stderr[r.stderr.rindex("{"):r.stderr.rindex("}") + 1])
+    af = (f"loudnorm=I={alvo}:TP={tp}:LRA=11:measured_I={m['input_i']}:measured_TP={m['input_tp']}:"
+          f"measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    tmp = v.with_suffix(".norm.mp4")
+    r = subprocess.run(["ffmpeg", "-nostdin", "-y", "-v", "error", "-i", str(v), "-map", "0", "-c:v", "copy",
+                        "-af", af, "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-movflags", "+faststart", str(tmp)],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        tmp.unlink(missing_ok=True)
+        raise RuntimeError("loudnorm (aplicacao) falhou: " + r.stderr.strip()[-300:])
+    tmp.replace(v)
+    return medir_lufs(str(v))
+
+
 def _hyperframes_do_cache():
     """O binario mais NOVO que ja esta no cache do npx. None se nao houver.
 
@@ -232,7 +266,13 @@ def main() -> int:
                     str(entrega)])
             if r.returncode != 0:
                 erro("concat do CTA falhou: " + r.stderr.strip()[:300])
-    print(f"entregavel {entrega}  {duracao(str(entrega)):.2f}s")
+    try:
+        lufs = normalizar_volume(entrega)
+    except RuntimeError as e:
+        erro(str(e))
+    if abs(lufs + 14) > 1:
+        erro(f"volume fora do alvo depois de normalizar: {lufs:.1f} LUFS (alvo -14 ±1)")
+    print(f"entregavel {entrega}  {duracao(str(entrega)):.2f}s  {lufs:.1f} LUFS")
 
     # ---- 6. QC visual, sobre o ENTREGAVEL (para o CTA entrar no quadro) ----
     passo("6/6 QC (portoes 2 e 3)")
